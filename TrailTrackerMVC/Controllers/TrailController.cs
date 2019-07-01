@@ -103,5 +103,26 @@ namespace TrailTrackerMVC.Controllers
             ModelState.AddModelError("", "Your trail could not be updated.");
             return View();
         }
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        { 
+            var svc = CreateTrailService();
+            var model = svc.GetTrailById(id);
+
+            return View(model);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateTrailService();
+
+            service.DeleteTrail(id);
+
+            TempData["SaveResult"] = "Your trail was deleted";
+
+            return RedirectToAction("Index");
+        }
     }
 }

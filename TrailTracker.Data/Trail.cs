@@ -24,7 +24,7 @@ namespace TrailTracker.Data
         public int Elevation { get; set; }
         public int SpotsAvailable { get; set; }
         public string AverageTimeMinutes { get; set; }
-        public DateTimeOffset Created { get; set; }
-        public DateTimeOffset Modified { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset ModifiedUtc { get; set; }
     }
 }

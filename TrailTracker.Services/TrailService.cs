@@ -30,8 +30,8 @@ namespace TrailTracker.Services
                     Elevation = model.Elevation,
                     SpotsAvailable = model.SpotsAvailable,
                     AverageTimeMinutes = model.AverageTimeMinutes,
-                    Created = DateTimeOffset.Now,
-                    Modified = DateTimeOffset.Now
+                    CreatedUtc = DateTimeOffset.Now,
+                    ModifiedUtc = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -60,21 +60,21 @@ namespace TrailTracker.Services
                                     Elevation = e.Elevation,
                                     SpotsAvailable = e.SpotsAvailable,
                                     AverageTimeMinutes = e.AverageTimeMinutes,
-                                    Created = e.Created,
-                                    Modified = e.Modified
+                                    Created = e.CreatedUtc,
+                                    Modified = e.ModifiedUtc
                                 }
                                );
                 return query.ToArray();
             }
         }
-        public TrailDetail GetTrailById(int id)
+        public TrailDetail GetTrailById(int trailId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Trails
-                        .Single(e => e.TrailTrackerID == id && e.OwnerID == _userId);
+                        .Single(e => e.TrailTrackerID == trailId && e.OwnerID == _userId);
                 return
                     new TrailDetail
                     {
@@ -87,8 +87,8 @@ namespace TrailTracker.Services
                         Elevation = entity.Elevation,
                         SpotsAvailable = entity.SpotsAvailable,
                         AverageTimeMinutes = entity.AverageTimeMinutes,
-                        Created = entity.Created,
-                        Modified = entity.Modified
+                        Created = entity.CreatedUtc,
+                        Modified = entity.ModifiedUtc
                     };
             }
         }
@@ -109,6 +109,20 @@ namespace TrailTracker.Services
                 entity.Elevation = model.Elevation;
                 entity.SpotsAvailable = model.SpotsAvailable;
                 entity.AverageTimeMinutes = model.AverageTimeMinutes;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteTrail (int trailId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Trails
+                        .Single(e => e.TrailTrackerID == trailId && e.OwnerID == _userId);
+
+                ctx.Trails.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

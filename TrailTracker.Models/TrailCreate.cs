@@ -12,6 +12,7 @@ namespace TrailTracker.Models
         [Required]
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
+        [Display(Name = "Trail Name")]
         public string TrailName { get; set; }
         [MaxLength(8000)]
         public string Description { get; set; }
@@ -20,7 +21,9 @@ namespace TrailTracker.Models
         [Required]
         public int Difficulty { get; set; }
         public int Elevation { get; set; }
+        [Display(Name = "Spots Available")]
         public int SpotsAvailable { get; set; }
+        [Display(Name = "Average Time")]
         public string AverageTimeMinutes { get; set; }
         public override string ToString() => TrailName;
     }

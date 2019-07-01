@@ -54,10 +54,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TrailsInfoDetail.cs" />
     <Compile Include="TrailDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrailCreate.cs" />
     <Compile Include="TrailEdit.cs" />
+    <Compile Include="TrailsInfoCreate.cs" />
+    <Compile Include="TrailsInfoEdit.cs" />
+    <Compile Include="TrailsInfoListItem.cs" />
     <Compile Include="TrailListItem.cs" />
   </ItemGroup>
   <ItemGroup>
