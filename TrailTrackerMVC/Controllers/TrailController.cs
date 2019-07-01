@@ -52,7 +52,7 @@ namespace TrailTrackerMVC.Controllers
             var service = new TrailService(userId);
             return service;
         }
-        
+
         public ActionResult Details(int id)
         {
             var svc = CreateTrailService();
@@ -79,6 +79,29 @@ namespace TrailTrackerMVC.Controllers
                     AverageTimeMinutes = detail.AverageTimeMinutes
                 };
             return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, TrailEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.TrailTrackerID != id)
+            {
+                ModelState.AddModelError("", "Id Missmatch");
+                return View(model);
+            }
+
+            var service = CreateTrailService();
+
+            if (service.UpdateTrail(model))
+            {
+                TempData["SaveResult"] = "Your trail was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your trail could not be updated.");
+            return View();
         }
     }
 }
