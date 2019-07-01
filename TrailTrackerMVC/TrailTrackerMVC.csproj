@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TrailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -234,6 +235,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Trail\Create.cshtml" />
+    <Content Include="Views\Trail\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -255,6 +258,10 @@
     <ProjectReference Include="..\TrailTracker.Data\TrailTracker.Data.csproj">
       <Project>{53BE812F-CDEE-4DF8-8647-C112160C18D1}</Project>
       <Name>TrailTracker.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrailTracker.Models\TrailTracker.Models.csproj">
+      <Project>{435B1BF2-1503-4DB8-AAA0-EB65C3C92DBC}</Project>
+      <Name>TrailTracker.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
