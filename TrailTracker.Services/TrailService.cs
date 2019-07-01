@@ -92,5 +92,26 @@ namespace TrailTracker.Services
                     };
             }
         }
+        public bool UpdateTrail(TrailEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Trails
+                        .Single(e => e.TrailTrackerID == model.TrailTrackerID && e.OwnerID == _userId);
+
+                entity.TrailName = model.TrailName;
+                entity.Description = model.Description;
+                entity.Miles = model.Miles;
+                entity.Location = model.Location;
+                entity.Difficulty = model.Difficulty;
+                entity.Elevation = model.Elevation;
+                entity.SpotsAvailable = model.SpotsAvailable;
+                entity.AverageTimeMinutes = model.AverageTimeMinutes;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

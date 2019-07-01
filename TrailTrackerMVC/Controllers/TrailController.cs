@@ -60,5 +60,25 @@ namespace TrailTrackerMVC.Controllers
 
             return View(model);
         }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateTrailService();
+            var detail = service.GetTrailById(id);
+            var model =
+                new TrailEdit
+                {
+                    TrailTrackerID = detail.TrailTrackerID,
+                    TrailName = detail.TrailName,
+                    Description = detail.Description,
+                    Miles = detail.Miles,
+                    Location = detail.Location,
+                    Difficulty = detail.Difficulty,
+                    Elevation = detail.Elevation,
+                    SpotsAvailable = detail.SpotsAvailable,
+                    AverageTimeMinutes = detail.AverageTimeMinutes
+                };
+            return View(model);
+        }
     }
 }
