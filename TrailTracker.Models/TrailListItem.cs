@@ -13,7 +13,14 @@ namespace TrailTracker.Models
         public string TrailName { get; set; }
         public int Description { get; set; }
         [Display(Name="Created")]
-        public DateTimeOffset CreatedTime { get; set; }
+        public double Miles { get; set; }
+        public string Location { get; set; }
+        public int Difficulty { get; set; }
+        public int Elevation { get; set; }
+        public int SpotsAvailable { get; set; }
+        public string AverageTimeMinutes { get; set; }
+        public DateTimeOffset Created { get; set; }
+        public DateTimeOffset Modified { get; set; }
         public override string ToString() => TrailName;
     }
 }

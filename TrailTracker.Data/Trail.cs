@@ -11,8 +11,11 @@ namespace TrailTracker.Data
     {
         [Key]
         public int TrailTrackerID { get; set; }
+        public Guid OwnerID { get; set; }
         [Required]
         public string TrailName { get; set; }
+        [Required]
+        [Display(Name = "Your Trail")]
         public string Description { get; set; }
         public double Miles { get; set; }
         public string Location { get; set; }
@@ -21,5 +24,7 @@ namespace TrailTracker.Data
         public int Elevation { get; set; }
         public int SpotsAvailable { get; set; }
         public string AverageTimeMinutes { get; set; }
+        public DateTimeOffset Created { get; set; }
+        public DateTimeOffset Modified { get; set; }
     }
 }

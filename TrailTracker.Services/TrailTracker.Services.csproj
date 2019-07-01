@@ -55,10 +55,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrailService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TrailTracker.Data\TrailTracker.Data.csproj">
+      <Project>{53BE812F-CDEE-4DF8-8647-C112160C18D1}</Project>
+      <Name>TrailTracker.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrailTracker.Models\TrailTracker.Models.csproj">
+      <Project>{435B1BF2-1503-4DB8-AAA0-EB65C3C92DBC}</Project>
+      <Name>TrailTracker.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
