@@ -1,0 +1,106 @@
+﻿@model TrailTracker.Models.TrailDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TrailDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TrailTrackerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrailTrackerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrailName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrailName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Miles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Miles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Difficulty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Difficulty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Elevation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Elevation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpotsAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpotsAvailable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageTimeMinutes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AverageTimeMinutes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modified)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modified)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrailTrackerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

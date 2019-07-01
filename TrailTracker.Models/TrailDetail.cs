@@ -25,4 +25,3 @@ namespace TrailTracker.Models
         public override string ToString() => $"[{TrailTrackerID}] {TrailName} {Description} {Miles} {Location} {Difficulty} {SpotsAvailable} {AverageTimeMinutes}";
     }
 }
-}

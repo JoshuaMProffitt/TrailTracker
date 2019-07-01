@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TrailDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrailCreate.cs" />
     <Compile Include="TrailListItem.cs" />
