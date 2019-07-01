@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TrailTracker.Models;
+using TrailTracker.Services;
 
 namespace TrailTrackerMVC.Controllers
 {
@@ -15,7 +17,9 @@ namespace TrailTrackerMVC.Controllers
         public ActionResult Index()
         {
             //4
-            var model = new TrailListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TrailService(userId);
+            var model = service.GetTrails();
             return View(model);
         }
         // G E T 
@@ -27,11 +31,26 @@ namespace TrailTrackerMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(TrailCreate model)
         {
-            if (ModelState.IsValid)
-            {
+            if (!ModelState.IsValid) return View(model);
 
-            }
+            var service = CreateTrailService();
+
+            if (service.CreateTrail(model))
+            {
+                TempData["SaveResult"] = "Your trail was added.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Trail could not be added.");
+
             return View(model);
+        }
+
+        private TrailService CreateTrailService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TrailService(userId);
+            return service;
         }
     }
 }

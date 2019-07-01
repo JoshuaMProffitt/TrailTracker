@@ -235,8 +235,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Trail\Create.cshtml" />
     <Content Include="Views\Trail\Index.cshtml" />
+    <Content Include="Views\Trail\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -262,6 +262,10 @@
     <ProjectReference Include="..\TrailTracker.Models\TrailTracker.Models.csproj">
       <Project>{435B1BF2-1503-4DB8-AAA0-EB65C3C92DBC}</Project>
       <Name>TrailTracker.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrailTracker.Services\TrailTracker.Services.csproj">
+      <Project>{AFBE6229-1707-40EA-B85A-89D25F897814}</Project>
+      <Name>TrailTracker.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
