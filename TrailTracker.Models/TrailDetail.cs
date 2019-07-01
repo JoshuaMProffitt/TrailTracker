@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TrailTracker.Models
 {
-    public class TrailListItem
+    public class TrailDetail
     {
         public int TrailTrackerID { get; set; }
         public string TrailName { get; set; }
@@ -18,9 +18,11 @@ namespace TrailTracker.Models
         public int Elevation { get; set; }
         public int SpotsAvailable { get; set; }
         public string AverageTimeMinutes { get; set; }
-        [Display(Name = "Created")]
+        [Display(Name ="Created")]
         public DateTimeOffset Created { get; set; }
+        [Display(Name = "Modified")]
         public DateTimeOffset Modified { get; set; }
-        public override string ToString() => TrailName;
+        public override string ToString() => $"[{TrailTrackerID}] {TrailName} {Description} {Miles} {Location} {Difficulty} {SpotsAvailable} {AverageTimeMinutes}";
     }
+}
 }
