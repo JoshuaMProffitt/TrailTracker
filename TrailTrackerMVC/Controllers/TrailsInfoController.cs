@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TrailTracker.Models;
+using TrailTracker.Services;
 
 namespace TrailTrackerMVC.Controllers
 { //1
@@ -14,7 +16,9 @@ namespace TrailTrackerMVC.Controllers
         public ActionResult Index()
         {
             //4
-            var model = new TrailsInfoListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TrailsInfoService(userId);
+            var model = service.GetTrailsInfos();
             return View(model);
         }
         // GET 
@@ -28,10 +32,15 @@ namespace TrailTrackerMVC.Controllers
         {
             if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
-        }
 
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TrailsInfoService(userId);
+
+            service.CreateTrailsInfo(model);
+
+            return RedirectToAction("Index");
+        }
     }
 }
