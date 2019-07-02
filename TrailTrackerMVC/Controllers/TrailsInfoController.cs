@@ -30,17 +30,26 @@ namespace TrailTrackerMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(TrailsInfoCreate model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+            if (!ModelState.IsValid) return View(model);
 
+            var service = CreateTrailsInfoService();
+
+            if (service.CreateTrailsInfo(model))
+            {
+                TempData["SaveResult"] = "Your trail info was added.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Trail Info could not be added.");
+
+            return View(model);
+        }
+
+        private TrailsInfoService CreateTrailsInfoService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new TrailsInfoService(userId);
-
-            service.CreateTrailsInfo(model);
-
-            return RedirectToAction("Index");
+            return service;
         }
     }
 }
