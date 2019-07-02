@@ -51,5 +51,12 @@ namespace TrailTrackerMVC.Controllers
             var service = new TrailsInfoService(userId);
             return service;
         }
+        public ActionResult Detail(int id)
+        {
+            var svc = CreateTrailsInfoService();
+            var model = svc.GetTrailsInfoById(id);
+
+            return View(model);
+        }
     }
 }

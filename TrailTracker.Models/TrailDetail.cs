@@ -25,7 +25,7 @@ namespace TrailTracker.Models
         [Display(Name ="Created")]
         public DateTimeOffset Created { get; set; }
         [Display(Name = "Modified")]
-        public DateTimeOffset Modified { get; set; }
+        public DateTimeOffset? Modified { get; set; }
         public override string ToString() => $"[{TrailTrackerID}] {TrailName} {Description} {Miles} {Location} {Difficulty} {SpotsAvailable} {AverageTimeMinutes}";
     }
 }

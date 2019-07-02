@@ -56,5 +56,26 @@ namespace TrailTracker.Services
                 return query.ToArray();
             }
         }
+        public TrailsInfoDetail GetTrailsInfoById(int trailId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .TrailsInfos
+                        .Single(e => e.TrailTrackerID == trailId && e.OwnerID == _userId);
+                return
+                    new TrailsInfoDetail
+                    {
+                        TrailTrackerID = entity.TrailTrackerID,
+                        Rating = entity.Rating,
+                        TrailComments = entity.TrailComments,
+                        NoteableSites = entity.NoteableSites,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+            }
+        }
+
     }
 }
