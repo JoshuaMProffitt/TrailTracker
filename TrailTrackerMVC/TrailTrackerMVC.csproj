@@ -242,11 +242,11 @@
     <Content Include="Views\Trail\Edit.cshtml" />
     <Content Include="Views\Trail\Delete.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
+    <Content Include="Views\TrailsInfo\Create.cshtml" />
     <Content Include="Views\TrailsInfo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\TrailInfo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

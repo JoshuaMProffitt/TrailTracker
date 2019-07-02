@@ -15,7 +15,23 @@ namespace TrailTrackerMVC.Controllers
         {
             //4
             var model = new TrailsInfoListItem[0];
+            return View(model);
+        }
+        // GET 
+        public ActionResult Create()
+        {
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(TrailsInfoCreate model)
+        {
+            if (!ModelState.IsValid)
+            {
+
+            }
+            return View(model);
+        }
+
     }
 }
