@@ -17,7 +17,7 @@ namespace TrailTracker.Models
         public string NoteableSites { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
-        [Display(Name = "Mofified")]
+        [Display(Name = "Modified")]
         public DateTimeOffset ModifiedUtc { get; set; }
         public override string ToString()
         {

@@ -30,8 +30,7 @@ namespace TrailTracker.Services
                     Elevation = model.Elevation,
                     SpotsAvailable = model.SpotsAvailable,
                     AverageTimeMinutes = model.AverageTimeMinutes,
-                    CreatedUtc = DateTimeOffset.Now,
-                    ModifiedUtc = DateTimeOffset.Now
+                    CreatedUtc = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
             {
