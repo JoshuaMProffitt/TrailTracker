@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TrailMeetCreate.cs" />
+    <Compile Include="TrailMeetDetail.cs" />
     <Compile Include="TrailMeetListItem.cs" />
     <Compile Include="TrailsInfoDetail.cs" />
     <Compile Include="TrailDetail.cs" />

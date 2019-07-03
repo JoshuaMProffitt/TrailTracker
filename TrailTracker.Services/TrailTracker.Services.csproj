@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrailMeetService.cs" />
     <Compile Include="TrailService.cs" />
     <Compile Include="TrailsInfoService.cs" />
   </ItemGroup>

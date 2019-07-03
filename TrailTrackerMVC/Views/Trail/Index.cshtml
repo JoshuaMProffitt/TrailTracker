@@ -41,9 +41,6 @@
         <th>
             @Html.DisplayNameFor(model => model.AverageTimeMinutes)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
         <th></th>
     </tr>
 
@@ -70,9 +67,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.AverageTimeMinutes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedUtc)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.TrailTrackerID }) |
