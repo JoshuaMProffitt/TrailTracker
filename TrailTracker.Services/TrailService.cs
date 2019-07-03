@@ -59,21 +59,21 @@ namespace TrailTracker.Services
                                     Elevation = e.Elevation,
                                     SpotsAvailable = e.SpotsAvailable,
                                     AverageTimeMinutes = e.AverageTimeMinutes,
-                                    Created = e.CreatedUtc,
-                                    Modified = e.ModifiedUtc
+                                    CreatedUtc = e.CreatedUtc,
+                                    ModifiedUtc = e.ModifiedUtc
                                 }
-                               );
+                       );
                 return query.ToArray();
             }
         }
-        public TrailDetail GetTrailById(int trailId)
+        public TrailDetail GetTrailById(int trailsId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Trails
-                        .Single(e => e.TrailTrackerID == trailId && e.OwnerID == _userId);
+                        .Single(e => e.TrailTrackerID == trailsId && e.OwnerID == _userId);
                 return
                     new TrailDetail
                     {
@@ -86,14 +86,14 @@ namespace TrailTracker.Services
                         Elevation = entity.Elevation,
                         SpotsAvailable = entity.SpotsAvailable,
                         AverageTimeMinutes = entity.AverageTimeMinutes,
-                        Created = entity.CreatedUtc,
-                        Modified = entity.ModifiedUtc
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
                     };
             }
         }
         public bool UpdateTrail(TrailEdit model)
         {
-            using(var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
@@ -112,7 +112,7 @@ namespace TrailTracker.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool DeleteTrail (int trailId)
+        public bool DeleteTrail(int trailId)
         {
             using (var ctx = new ApplicationDbContext())
             {

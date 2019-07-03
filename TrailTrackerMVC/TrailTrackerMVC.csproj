@@ -171,6 +171,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TrailController.cs" />
+    <Compile Include="Controllers\TrailMeetController.cs" />
     <Compile Include="Controllers\TrailsInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -244,6 +245,11 @@
     <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
     <Content Include="Views\TrailsInfo\Create.cshtml" />
     <Content Include="Views\TrailsInfo\Index.cshtml" />
+    <Content Include="Views\TrailsInfo\Details.cshtml" />
+    <Content Include="Views\TrailsInfo\Edit.cshtml" />
+    <Content Include="Views\TrailsInfo\Delete.cshtml" />
+    <Content Include="Views\TrailMeet\Index.cshtml" />
+    <Content Include="Views\TrailMeet\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

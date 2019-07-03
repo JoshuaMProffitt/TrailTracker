@@ -23,8 +23,8 @@ namespace TrailTracker.Models
         [Display(Name = "Average Time Minutes")]
         public string AverageTimeMinutes { get; set; }
         [Display(Name = "Created")]
-        public DateTimeOffset Created { get; set; }
-        public DateTimeOffset Modified { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset ModifiedUtc { get; set; }
         public override string ToString() => TrailName;
     }
 }

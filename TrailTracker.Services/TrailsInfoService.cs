@@ -76,6 +76,36 @@ namespace TrailTracker.Services
                     };
             }
         }
+        public bool UpdateTrailsInfo(TrailsInfoEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .TrailsInfos
+                        .Single(e => e.TrailTrackerID == model.TrailTrackerID && e.OwnerID == _userId);
 
+                entity.TrailTrackerID = model.TrailTrackerID;
+                entity.Rating = model.Rating;
+                entity.TrailComments = model.TrailComments;
+                entity.NoteableSites = model.NoteableSites;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteTrail(int trailId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx 
+                        .TrailsInfos
+                        .Single(e => e.TrailTrackerID == trailId && e.OwnerID == _userId);
+
+                ctx.TrailsInfos.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

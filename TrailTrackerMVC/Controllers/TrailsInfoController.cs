@@ -44,19 +44,75 @@ namespace TrailTrackerMVC.Controllers
 
             return View(model);
         }
-
         private TrailsInfoService CreateTrailsInfoService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new TrailsInfoService(userId);
             return service;
         }
-        public ActionResult Detail(int id)
+        public ActionResult Details(int id)
         {
             var svc = CreateTrailsInfoService();
             var model = svc.GetTrailsInfoById(id);
 
             return View(model);
+        }
+        public ActionResult Edit(int id)
+        {
+            var service = CreateTrailsInfoService();
+            var detail = service.GetTrailsInfoById(id);
+            var model =
+                new TrailsInfoEdit
+                {
+                    TrailTrackerID = detail.TrailTrackerID,
+                    Rating = detail.Rating,
+                    TrailComments = detail.TrailComments,
+                    NoteableSites = detail.NoteableSites
+                };
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, TrailsInfoEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.TrailTrackerID != id)
+            {
+                ModelState.AddModelError("", "Id Missmatch");
+                return View(model);
+            }
+
+            var service = CreateTrailsInfoService();
+
+            if (service.UpdateTrailsInfo(model))
+            {
+                TempData["SaveResult"] = "Your Trail Info was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your trail info could not be updated.");
+            return View();
+        }
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateTrailsInfoService();
+            var model = svc.GetTrailsInfoById(id);
+
+            return View(model);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateTrailsInfoService();
+
+            service.DeleteTrail(id);
+
+            TempData["SaveResult"] = "Your trail info was deleted";
+
+            return RedirectToAction("Index");
         }
     }
 }
