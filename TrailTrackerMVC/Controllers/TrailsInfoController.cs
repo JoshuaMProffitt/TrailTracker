@@ -64,7 +64,7 @@ namespace TrailTrackerMVC.Controllers
             var model =
                 new TrailsInfoEdit
                 {
-                    TrailTrackerID = detail.TrailTrackerID,
+                    TrailInfoID = detail.TrailInfoID,
                     Rating = detail.Rating,
                     TrailComments = detail.TrailComments,
                     NoteableSites = detail.NoteableSites
@@ -77,7 +77,7 @@ namespace TrailTrackerMVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if(model.TrailTrackerID != id)
+            if(model.TrailInfoID != id)
             {
                 ModelState.AddModelError("", "Id Missmatch");
                 return View(model);

@@ -10,8 +10,8 @@ namespace TrailTracker.Models
 {
     public class TrailMeetDetail
     {
-        [Display(Name = "Trail Tracker ID")]
-        public int TrailTrackerID { get; set; }
+        [Display(Name = "Trail Meet ID")]
+        public int TrailMeetID { get; set; }
         public TrailType OfTrailType { get; set; }
         public string Picture { get; set; }
         [Display(Name = "Meetup Time")]
@@ -22,6 +22,6 @@ namespace TrailTracker.Models
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]
         public DateTimeOffset ModifiedUtc { get; set; }
-        public override string ToString() => $"[{TrailTrackerID}] {OfTrailType} {Picture} {MeetTime} {MeetComments}";
+        public override string ToString() => $"[{TrailMeetID}] {OfTrailType} {Picture} {MeetTime} {MeetComments}";
     }
 }

@@ -42,7 +42,7 @@
                 @Html.DisplayFor(modelItem => item.Picture)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.JoinTrail, new { Id = item.TrailTrackerID })
+                @Html.DisplayFor(modelItem => item.JoinTrail, new { Id = item.TrailMeetID })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.MeetTime)
@@ -51,9 +51,9 @@
                 @Html.DisplayFor(modelItem => item.MeetComments)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.TrailTrackerID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.TrailTrackerID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.TrailTrackerID })
+                @Html.ActionLink("Edit", "Edit", new { id = item.TrailMeetID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TrailMeetID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TrailMeetID })
             </td>
         </tr>
     }

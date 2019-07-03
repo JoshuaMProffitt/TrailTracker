@@ -26,7 +26,7 @@ namespace TrailTrackerMVC.Controllers.WebAPI
             var updateTrailMeets =
                 new TrailMeetEdit
                 {
-                    TrailTrackerID = detail.TrailTrackerID,
+                    TrailMeetID = detail.TrailMeetID,
                     OfTrailType = detail.OfTrailType,
                     Picture = detail.Picture,
                     MeetTime = detail.MeetTime,

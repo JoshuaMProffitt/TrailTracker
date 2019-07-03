@@ -10,7 +10,7 @@ namespace TrailTracker.Models
 {
     public class TrailMeetEdit
     {
-        public int TrailTrackerID { get; set; }
+        public int TrailMeetID { get; set; }
         public TrailType OfTrailType { get; set; }
         public string Picture { get; set; }
         [Display(Name = "Join Trail")]

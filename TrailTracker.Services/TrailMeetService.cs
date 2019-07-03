@@ -46,7 +46,7 @@ namespace TrailTracker.Services
                             e =>
                                 new TrailMeetListItem
                                 {
-                                    TrailTrackerID = e.TrailTrackerID,
+                                    TrailMeetID = e.TrailMeetID,
                                     OfTrailType = e.OfTrailType,
                                     Picture = e.Picture,
                                     JoinTrail = e.JoinTrail,
@@ -65,11 +65,11 @@ namespace TrailTracker.Services
                 var entity =
                     ctx
                         .TrailMeets
-                        .Single(e => e.TrailTrackerID == trailId && e.OwnerID == _userId);
+                        .Single(e => e.TrailMeetID == trailId && e.OwnerID == _userId);
                 return
                     new TrailMeetDetail
                     {
-                        TrailTrackerID = entity.TrailTrackerID,
+                        TrailMeetID = entity.TrailMeetID,
                         OfTrailType = entity.OfTrailType,
                         Picture = entity.Picture,
                         MeetTime = entity.MeetTime,
@@ -86,7 +86,7 @@ namespace TrailTracker.Services
                 var entity =
                     ctx
                         .TrailMeets
-                        .Single(e => e.TrailTrackerID == model.TrailTrackerID && e.OwnerID == _userId);
+                        .Single(e => e.TrailMeetID == model.TrailMeetID && e.OwnerID == _userId);
                 entity.OfTrailType = model.OfTrailType;
                 entity.Picture = model.Picture;
                 entity.JoinTrail = model.JoinTrail;
@@ -104,7 +104,7 @@ namespace TrailTracker.Services
                 var entity =
                     ctx
                         .TrailMeets
-                        .Single(e => e.TrailTrackerID == TrailMeetId && e.OwnerID == _userId);
+                        .Single(e => e.TrailMeetID == TrailMeetId && e.OwnerID == _userId);
 
                 ctx.TrailMeets.Remove(entity);
 

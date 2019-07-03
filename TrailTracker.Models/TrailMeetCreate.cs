@@ -9,7 +9,7 @@ namespace TrailTracker.Models
 {
     public class TrailMeetCreate
     {
-        public int TrailTrackerID { get; set; }
+        public int TrailMeetID { get; set; }
         public TrailType OfTrailType { get; set; }
         public string Picture { get; set; }
         public DateTime MeetTime { get; set; }

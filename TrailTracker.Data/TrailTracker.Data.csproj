@@ -67,43 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201907011550299_InitialCreate.cs" />
-    <Compile Include="Migrations\201907011550299_InitialCreate.Designer.cs">
-      <DependentUpon>201907011550299_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907011551381_First.cs" />
-    <Compile Include="Migrations\201907011551381_First.Designer.cs">
-      <DependentUpon>201907011551381_First.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907011727222_Second.cs" />
-    <Compile Include="Migrations\201907011727222_Second.Designer.cs">
-      <DependentUpon>201907011727222_Second.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907011756581_Third.cs" />
-    <Compile Include="Migrations\201907011756581_Third.Designer.cs">
-      <DependentUpon>201907011756581_Third.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907012136347_Four.cs" />
-    <Compile Include="Migrations\201907012136347_Four.Designer.cs">
-      <DependentUpon>201907012136347_Four.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907012141473_Five.cs" />
-    <Compile Include="Migrations\201907012141473_Five.Designer.cs">
-      <DependentUpon>201907012141473_Five.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907012221083_Six.cs" />
-    <Compile Include="Migrations\201907012221083_Six.Designer.cs">
-      <DependentUpon>201907012221083_Six.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907021429552_OwnerID, DbSet.cs" />
-    <Compile Include="Migrations\201907021429552_OwnerID, DbSet.Designer.cs">
-      <DependentUpon>201907021429552_OwnerID, DbSet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907031500529_added an ownerid.cs" />
-    <Compile Include="Migrations\201907031500529_added an ownerid.Designer.cs">
-      <DependentUpon>201907031500529_added an ownerid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrailsInfo.cs" />
     <Compile Include="TrailMeet.cs" />
@@ -112,35 +75,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907011550299_InitialCreate.resx">
-      <DependentUpon>201907011550299_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907011551381_First.resx">
-      <DependentUpon>201907011551381_First.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907011727222_Second.resx">
-      <DependentUpon>201907011727222_Second.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907011756581_Third.resx">
-      <DependentUpon>201907011756581_Third.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907012136347_Four.resx">
-      <DependentUpon>201907012136347_Four.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907012141473_Five.resx">
-      <DependentUpon>201907012141473_Five.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907012221083_Six.resx">
-      <DependentUpon>201907012221083_Six.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907021429552_OwnerID, DbSet.resx">
-      <DependentUpon>201907021429552_OwnerID, DbSet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907031500529_added an ownerid.resx">
-      <DependentUpon>201907031500529_added an ownerid.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

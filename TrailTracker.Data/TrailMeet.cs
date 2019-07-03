@@ -15,7 +15,7 @@ namespace TrailTracker.Data
     public class TrailMeet
     {
         [Key]
-        public int TrailTrackerID { get; set; }
+        public int TrailMeetID { get; set; }
         public Guid OwnerID { get; set; }
         [Required]
         public TrailType OfTrailType { get; set; }

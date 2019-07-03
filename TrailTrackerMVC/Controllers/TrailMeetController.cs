@@ -62,7 +62,7 @@ namespace TrailTrackerMVC.Controllers
             var model =
                 new TrailMeetEdit
                 {
-                    TrailTrackerID = detail.TrailTrackerID,
+                    TrailMeetID = detail.TrailMeetID,
                     OfTrailType = detail.OfTrailType,
                     Picture = detail.Picture,
                     MeetTime = detail.MeetTime,
@@ -76,7 +76,7 @@ namespace TrailTrackerMVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.TrailTrackerID != id)
+            if (model.TrailMeetID != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);

@@ -10,7 +10,7 @@ namespace TrailTracker.Data
     public class TrailsInfo
     {
         [Key]
-        public int TrailTrackerID { get; set; }
+        public int TrailInfoID { get; set; }
         public Guid OwnerID { get; set; }
         public int Rating { get; set; }
         public string TrailComments { get; set; }

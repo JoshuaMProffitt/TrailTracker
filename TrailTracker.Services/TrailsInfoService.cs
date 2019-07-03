@@ -45,7 +45,7 @@ namespace TrailTracker.Services
                             e =>
                                 new TrailsInfoListItem
                                 {
-                                    TrailTrackerID = e.TrailTrackerID,
+                                    TrailInfoID = e.TrailInfoID,
                                     Rating = e.Rating,
                                     TrailComments = e.TrailComments,
                                     NoteableSites = e.NoteableSites,
@@ -62,11 +62,11 @@ namespace TrailTracker.Services
                 var entity =
                     ctx
                         .TrailsInfos
-                        .Single(e => e.TrailTrackerID == trailId && e.OwnerID == _userId);
+                        .Single(e => e.TrailInfoID == trailId && e.OwnerID == _userId);
                 return
                     new TrailsInfoDetail
                     {
-                        TrailTrackerID = entity.TrailTrackerID,
+                        TrailInfoID = entity.TrailInfoID,
                         Rating = entity.Rating,
                         TrailComments = entity.TrailComments,
                         NoteableSites = entity.NoteableSites,
@@ -82,9 +82,9 @@ namespace TrailTracker.Services
                 var entity =
                     ctx
                         .TrailsInfos
-                        .Single(e => e.TrailTrackerID == model.TrailTrackerID && e.OwnerID == _userId);
+                        .Single(e => e.TrailInfoID == model.TrailInfoID && e.OwnerID == _userId);
 
-                entity.TrailTrackerID = model.TrailTrackerID;
+                entity.TrailInfoID = model.TrailInfoID;
                 entity.Rating = model.Rating;
                 entity.TrailComments = model.TrailComments;
                 entity.NoteableSites = model.NoteableSites;
@@ -100,7 +100,7 @@ namespace TrailTracker.Services
                 var entity =
                     ctx 
                         .TrailsInfos
-                        .Single(e => e.TrailTrackerID == trailId && e.OwnerID == _userId);
+                        .Single(e => e.TrailInfoID == trailId && e.OwnerID == _userId);
 
                 ctx.TrailsInfos.Remove(entity);
 

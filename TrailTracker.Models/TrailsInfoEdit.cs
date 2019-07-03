@@ -9,7 +9,7 @@ namespace TrailTracker.Models
 {
     public class TrailsInfoEdit
     {
-        public int TrailTrackerID { get; set; }
+        public int TrailInfoID { get; set; }
         public int Rating { get; set; }
         [Display(Name = "Trail Comments")]
         public string TrailComments { get; set; }
