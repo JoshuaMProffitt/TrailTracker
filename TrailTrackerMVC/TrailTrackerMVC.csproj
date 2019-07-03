@@ -251,6 +251,7 @@
     <Content Include="Views\TrailMeet\Index.cshtml" />
     <Content Include="Views\TrailMeet\Create.cshtml" />
     <Content Include="Views\TrailMeet\Details.cshtml" />
+    <Content Include="Views\TrailMeet\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

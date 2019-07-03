@@ -62,12 +62,35 @@ namespace TrailTrackerMVC.Controllers
             var model =
                 new TrailMeetEdit
                 {
+                    TrailTrackerID = detail.TrailTrackerID,
                     OfTrailType = detail.OfTrailType,
                     Picture = detail.Picture,
                     JoinTrail = detail.JoinTrail,
                     MeetTime = detail.MeetTime,
                     MeetComments = detail.MeetComments
                 };
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, TrailMeetEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.TrailTrackerID != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateTrailMeetService();
+
+            if (service.UpdateTrailMeet(model))
+            {
+                TempData["SaveResult"] = "Your Trail Meetup was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your Trail Meetup could not be updated.");
             return View(model);
         }
     }
