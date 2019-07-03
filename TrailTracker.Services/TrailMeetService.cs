@@ -81,5 +81,24 @@ namespace TrailTracker.Services
                     };
             }
         }
+        public bool UpdateTrailMeet(TrailMeetEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .TrailMeets
+                        .Single(e => e.TrailTrackerID == model.TrailTrackerID && e.OwnerID == _userId);
+                entity.OfTrailType = model.OfTrailType;
+                entity.Picture = model.Picture;
+                entity.JoinTrail = model.JoinTrail;
+                entity.MeetTime = model.MeetTime;
+                entity.MeetComments = model.MeetComments;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
+

@@ -55,5 +55,20 @@ namespace TrailTrackerMVC.Controllers
 
             return View(model);
         }
+        public ActionResult Edit(int id)
+        {
+            var service = CreateTrailMeetService();
+            var detail = service.GetTrailMeetById(id);
+            var model =
+                new TrailMeetEdit
+                {
+                    OfTrailType = detail.OfTrailType,
+                    Picture = detail.Picture,
+                    JoinTrail = detail.JoinTrail,
+                    MeetTime = detail.MeetTime,
+                    MeetComments = detail.MeetComments
+                };
+            return View(model);
+        }
     }
 }
