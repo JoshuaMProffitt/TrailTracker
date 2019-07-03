@@ -12,7 +12,6 @@ namespace TrailTracker.Models
         public int TrailTrackerID { get; set; }
         public TrailType OfTrailType { get; set; }
         public string Picture { get; set; }
-        public bool JoinTrail { get; set; }
         public DateTime MeetTime { get; set; }
         public string MeetComments { get; set; }
         public override string ToString()

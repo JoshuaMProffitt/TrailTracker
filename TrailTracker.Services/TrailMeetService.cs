@@ -24,7 +24,6 @@ namespace TrailTracker.Services
                     OwnerID = _userId,
                     OfTrailType = model.OfTrailType,
                     Picture = model.Picture,
-                    JoinTrail = model.JoinTrail,
                     MeetTime = model.MeetTime,
                     MeetComments = model.MeetComments,
                     CreatedUtc = DateTimeOffset.Now
@@ -73,7 +72,6 @@ namespace TrailTracker.Services
                         TrailTrackerID = entity.TrailTrackerID,
                         OfTrailType = entity.OfTrailType,
                         Picture = entity.Picture,
-                        JoinTrail = entity.JoinTrail,
                         MeetTime = entity.MeetTime,
                         MeetComments = entity.MeetComments,
                         CreatedUtc = entity.CreatedUtc,
@@ -95,6 +93,20 @@ namespace TrailTracker.Services
                 entity.MeetTime = model.MeetTime;
                 entity.MeetComments = model.MeetComments;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteTrailMeet(int TrailMeetId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .TrailMeets
+                        .Single(e => e.TrailTrackerID == TrailMeetId && e.OwnerID == _userId);
+
+                ctx.TrailMeets.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

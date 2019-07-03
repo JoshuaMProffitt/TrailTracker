@@ -15,6 +15,8 @@ namespace TrailTracker.Models
         public int TrailTrackerID { get; set; }
         public TrailType OfTrailType { get; set; }
         public string Picture { get; set; }
+        [UIHint("JoinedTrail")]
+        [Display(Name ="Join Trail")]
         public bool JoinTrail { get; set; }
         [Display(Name = "Meetup Time")]
         public DateTime MeetTime { get; set; }

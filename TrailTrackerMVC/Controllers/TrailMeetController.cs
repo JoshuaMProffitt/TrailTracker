@@ -65,7 +65,6 @@ namespace TrailTrackerMVC.Controllers
                     TrailTrackerID = detail.TrailTrackerID,
                     OfTrailType = detail.OfTrailType,
                     Picture = detail.Picture,
-                    JoinTrail = detail.JoinTrail,
                     MeetTime = detail.MeetTime,
                     MeetComments = detail.MeetComments
                 };
@@ -87,11 +86,32 @@ namespace TrailTrackerMVC.Controllers
 
             if (service.UpdateTrailMeet(model))
             {
-                TempData["SaveResult"] = "Your Trail Meetup was updated.";
+                TempData["SaveResult"] = "Your trail Meetup was updated.";
                 return RedirectToAction("Index");
             }
-            ModelState.AddModelError("", "Your Trail Meetup could not be updated.");
+            ModelState.AddModelError("", "Your trail Meetup could not be updated.");
             return View(model);
+        }
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateTrailMeetService();
+            var model = svc.GetTrailMeetById(id);
+
+            return View(model);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateTrailMeetService();
+
+            service.DeleteTrailMeet(id);
+
+            TempData["SaveResult"] = "Your trail meetup was deleted.";
+
+            return RedirectToAction("Index");
         }
     }
 }

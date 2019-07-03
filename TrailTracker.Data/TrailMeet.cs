@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace TrailTracker.Data
         [Required]
         public TrailType OfTrailType { get; set; }
         public string Picture { get; set; }
+        [DefaultValue(false)]
         public bool JoinTrail { get; set; }
         public DateTime MeetTime { get; set; }
         public string MeetComments { get; set; }
