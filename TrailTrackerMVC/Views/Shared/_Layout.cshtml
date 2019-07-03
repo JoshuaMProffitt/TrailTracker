@@ -21,10 +21,18 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Trails", "Index", "Trail")</li>
-                    <li>@Html.ActionLink("Trail Info", "Index", "TrailsInfo")</li>
-                    <li>@Html.ActionLink("Trail Meetup", "Index", "TrailMeet")</li>
-
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Trails", "Index", "Trail")</li>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Trail Info", "Index", "TrailsInfo")</li>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Trail Meetup", "Index", "TrailMeet")</li>
+                    }
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>

@@ -49,8 +49,7 @@ namespace TrailTracker.Services
                                     Rating = e.Rating,
                                     TrailComments = e.TrailComments,
                                     NoteableSites = e.NoteableSites,
-                                    CreatedUtc = e.CreatedUtc,
-                                    ModifiedUtc = e.ModifiedUtc
+                                    CreatedUtc = e.CreatedUtc
                                 }
                         );
                 return query.ToArray();
@@ -89,6 +88,7 @@ namespace TrailTracker.Services
                 entity.Rating = model.Rating;
                 entity.TrailComments = model.TrailComments;
                 entity.NoteableSites = model.NoteableSites;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
             }

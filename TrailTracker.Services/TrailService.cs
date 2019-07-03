@@ -59,8 +59,7 @@ namespace TrailTracker.Services
                                     Elevation = e.Elevation,
                                     SpotsAvailable = e.SpotsAvailable,
                                     AverageTimeMinutes = e.AverageTimeMinutes,
-                                    CreatedUtc = e.CreatedUtc,
-                                    ModifiedUtc = e.ModifiedUtc
+                                    CreatedUtc = e.CreatedUtc
                                 }
                        );
                 return query.ToArray();
@@ -108,6 +107,7 @@ namespace TrailTracker.Services
                 entity.Elevation = model.Elevation;
                 entity.SpotsAvailable = model.SpotsAvailable;
                 entity.AverageTimeMinutes = model.AverageTimeMinutes;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
             }

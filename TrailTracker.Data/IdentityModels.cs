@@ -34,6 +34,7 @@ namespace TrailTracker.Data
 
         public DbSet<Trail> Trails { get; set; }
         public DbSet<TrailsInfo> TrailsInfos { get; set; }
+        public DbSet<TrailMeet> TrailMeets { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

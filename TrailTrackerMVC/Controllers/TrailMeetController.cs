@@ -21,5 +21,16 @@ namespace TrailTrackerMVC.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(TrailMeetCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View(model);
+        }
+
     }
 }
