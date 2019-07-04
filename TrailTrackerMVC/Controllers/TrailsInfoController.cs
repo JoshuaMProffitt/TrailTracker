@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TrailTracker.Data;
 using TrailTracker.Models;
 using TrailTracker.Services;
 
@@ -12,6 +13,7 @@ namespace TrailTrackerMVC.Controllers
     [Authorize]
     public class TrailsInfoController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
         // GET: TrailInfo 2 3
         public ActionResult Index()
         {
@@ -24,6 +26,11 @@ namespace TrailTrackerMVC.Controllers
         // GET 
         public ActionResult Create()
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var TrailsInfoService = new TrailsInfoService(userId);
+            var TrailList = TrailsInfoService.GetTrailsInfos();
+
+            ViewBag.TrailTrackerID = new SelectList(TrailList, "TrailTrackerID", "TrailName");
             return View();
         }
         [HttpPost]
@@ -69,6 +76,7 @@ namespace TrailTrackerMVC.Controllers
                     TrailComments = detail.TrailComments,
                     NoteableSites = detail.NoteableSites
                 };
+            ViewBag.TrailTrackerID = new SelectList(_db.Trails.ToList(), "TrailTrackerID", "TrailName");
             return View(model);
         }
         [HttpPost]

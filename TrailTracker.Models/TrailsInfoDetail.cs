@@ -11,6 +11,7 @@ namespace TrailTracker.Models
     {
         [Display(Name = "Trail Info ID")]
         public int TrailInfoID { get; set; }
+        public int TrailTrackerID { get; set; }
         public int Rating { get; set; }
         public string TrailComments { get; set; }
         public string NoteableSites { get; set; }

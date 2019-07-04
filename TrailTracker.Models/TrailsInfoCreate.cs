@@ -9,6 +9,8 @@ namespace TrailTracker.Models
 {
     public class TrailsInfoCreate
     {
+        public int TrailTrackerID { get; set; }
+        public string TrailName { get; set; }
         public int Rating { get; set; }
         [Display(Name = "Trail Comments")]
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]

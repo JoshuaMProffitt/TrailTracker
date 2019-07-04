@@ -10,6 +10,8 @@ namespace TrailTracker.Models
     public class TrailsInfoListItem
     {
         public int TrailInfoID { get; set; }
+        public int TrailTrackerID { get; set; }
+        public string TrailName { get; set; }
         public int Rating { get; set; }
         [Display(Name = "Trail Comments")]
         public string TrailComments { get; set; }
