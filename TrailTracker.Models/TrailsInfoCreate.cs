@@ -1,15 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TrailTracker.Data;
 
 namespace TrailTracker.Models
 {
     public class TrailsInfoCreate
     {
+        [Display(Name = "Trail Info ID")]
+        public int TrailInfoID { get; set; }
+
+        [ForeignKey(nameof(Trail))]
         public int TrailTrackerID { get; set; }
+        public virtual Trail Trail { get; set; }
+        [Display(Name = "Trail Name")]
         public string TrailName { get; set; }
         public int Rating { get; set; }
         [Display(Name = "Trail Comments")]

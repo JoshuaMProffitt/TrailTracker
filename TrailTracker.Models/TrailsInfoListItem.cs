@@ -4,13 +4,18 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TrailTracker.Data;
 
 namespace TrailTracker.Models
 {
     public class TrailsInfoListItem
     {
+        [Display(Name = "Trail Info ID")]
         public int TrailInfoID { get; set; }
+        [Display(Name = "Trail Tracker ID")]
         public int TrailTrackerID { get; set; }
+        public virtual Trail Trail { get; set; }
+        [Display(Name = "Trail Name")]
         public string TrailName { get; set; }
         public int Rating { get; set; }
         [Display(Name = "Trail Comments")]

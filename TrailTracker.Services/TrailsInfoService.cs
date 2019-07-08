@@ -22,6 +22,8 @@ namespace TrailTracker.Services
                 new TrailsInfo()
                 {
                     OwnerID = _userId,
+                    TrailTrackerID = model.TrailTrackerID,
+                    TrailName = model.TrailName,
                     Rating = model.Rating,
                     TrailComments = model.TrailComments,
                     NoteableSites = model.NoteableSites,
@@ -46,6 +48,8 @@ namespace TrailTracker.Services
                                 new TrailsInfoListItem
                                 {
                                     TrailInfoID = e.TrailInfoID,
+                                    TrailTrackerID = e.TrailTrackerID,
+                                    TrailName = e.TrailName,
                                     Rating = e.Rating,
                                     TrailComments = e.TrailComments,
                                     NoteableSites = e.NoteableSites,
@@ -67,6 +71,8 @@ namespace TrailTracker.Services
                     new TrailsInfoDetail
                     {
                         TrailInfoID = entity.TrailInfoID,
+                        TrailTrackerID = entity.TrailTrackerID,
+                        TrailName = entity.TrailName,
                         Rating = entity.Rating,
                         TrailComments = entity.TrailComments,
                         NoteableSites = entity.NoteableSites,
@@ -85,6 +91,8 @@ namespace TrailTracker.Services
                         .Single(e => e.TrailInfoID == model.TrailInfoID && e.OwnerID == _userId);
 
                 entity.TrailInfoID = model.TrailInfoID;
+                entity.TrailTrackerID = model.TrailTrackerID;
+                entity.TrailName = model.TrailName;
                 entity.Rating = model.Rating;
                 entity.TrailComments = model.TrailComments;
                 entity.NoteableSites = model.NoteableSites;

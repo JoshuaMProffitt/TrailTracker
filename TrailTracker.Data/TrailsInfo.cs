@@ -15,6 +15,7 @@ namespace TrailTracker.Data
         [ForeignKey(nameof(Trail))]
         public int TrailTrackerID { get; set; }
         public virtual Trail Trail { get; set; }
+        public string TrailName { get; set; }
         public Guid OwnerID { get; set; }
         public int Rating { get; set; }
         public string TrailComments { get; set; }
