@@ -14,9 +14,8 @@ namespace TrailTracker.Models
         [Display(Name = "Trail Info ID")]
         public int TrailInfoID { get; set; }
 
-        [ForeignKey(nameof(Trail))]
+        //[ForeignKey(nameof(Trail))]
         public int TrailTrackerID { get; set; }
-        public virtual Trail Trail { get; set; }
         [Display(Name = "Trail Name")]
         public string TrailName { get; set; }
         public int Rating { get; set; }

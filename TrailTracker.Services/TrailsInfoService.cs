@@ -23,7 +23,6 @@ namespace TrailTracker.Services
                 {
                     OwnerID = _userId,
                     TrailTrackerID = model.TrailTrackerID,
-                    TrailName = model.TrailName,
                     Rating = model.Rating,
                     TrailComments = model.TrailComments,
                     NoteableSites = model.NoteableSites,
@@ -49,7 +48,6 @@ namespace TrailTracker.Services
                                 {
                                     TrailInfoID = e.TrailInfoID,
                                     TrailTrackerID = e.TrailTrackerID,
-                                    TrailName = e.TrailName,
                                     Rating = e.Rating,
                                     TrailComments = e.TrailComments,
                                     NoteableSites = e.NoteableSites,
@@ -72,7 +70,7 @@ namespace TrailTracker.Services
                     {
                         TrailInfoID = entity.TrailInfoID,
                         TrailTrackerID = entity.TrailTrackerID,
-                        TrailName = entity.TrailName,
+                        TrailName = entity.Trail.TrailName,
                         Rating = entity.Rating,
                         TrailComments = entity.TrailComments,
                         NoteableSites = entity.NoteableSites,
@@ -92,7 +90,6 @@ namespace TrailTracker.Services
 
                 entity.TrailInfoID = model.TrailInfoID;
                 entity.TrailTrackerID = model.TrailTrackerID;
-                entity.TrailName = model.TrailName;
                 entity.Rating = model.Rating;
                 entity.TrailComments = model.TrailComments;
                 entity.NoteableSites = model.NoteableSites;
@@ -113,6 +110,14 @@ namespace TrailTracker.Services
                 ctx.TrailsInfos.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public List<Trail> GetTrails()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Trails.ToList();
             }
         }
     }

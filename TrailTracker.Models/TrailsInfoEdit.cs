@@ -14,8 +14,6 @@ namespace TrailTracker.Models
         public int TrailInfoID { get; set; }
         [Display(Name = "Trail Tracker ID")]
         public int TrailTrackerID { get; set; }
-
-        public virtual Trail Trail { get; set; }
         [Display(Name = "Trail Name")]
         public string TrailName { get; set; }
         public int Rating { get; set; }

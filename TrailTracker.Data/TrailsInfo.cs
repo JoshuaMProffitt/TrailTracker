@@ -12,15 +12,15 @@ namespace TrailTracker.Data
     {
         [Key]
         public int TrailInfoID { get; set; }
-        [ForeignKey(nameof(Trail))]
-        public int TrailTrackerID { get; set; }
-        public virtual Trail Trail { get; set; }
-        public string TrailName { get; set; }
+        //public string TrailName { get; set; }
         public Guid OwnerID { get; set; }
         public int Rating { get; set; }
         public string TrailComments { get; set; }
         public string NoteableSites { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset ModifiedUtc { get; set; }
+        [ForeignKey(nameof(Trail))]
+        public int TrailTrackerID { get; set; }
+        public virtual Trail Trail { get; set; }
     }
 }

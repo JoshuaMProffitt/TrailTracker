@@ -30,41 +30,29 @@ namespace TrailTrackerMVC.Controllers
 
             var userId = Guid.Parse(User.Identity.GetUserId());
             var TrailsInfoService = new TrailsInfoService(userId);
-            //var TrailList = service.GetTrailsInfos();
 
-            //var TrailsInfoService = CreateTrailsInfoService();
+            //var TrailService = new TrailService(userId);
 
-            var TrailService = new TrailService(userId);
+            //var TrailsInfos = TrailService.GetTrails();
 
-            var TrailsInfos = TrailService.GetTrails();
-
-            ViewBag.TrailTrackerID = new SelectList(TrailsInfos.ToList(), "TrailTrackerID", "TrailName");
-            //ViewBag.CustomerID = new SelectList(_db.Customers.ToList(), "CustomerID", "FullName");
+            ViewBag.TrailTrackerID = new SelectList(TrailsInfoService.GetTrails(), "TrailTrackerID", "TrailName");
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(TrailsInfoCreate model)
         {
-            //if (!ModelState.IsValid && model.TrailTrackerID !=0)
-            //    //return View(model);
-            //{
-            //    _db.TrailsInfos.Add(model);
-            //    _db.SaveChanges();
-            //    TempData["SaveResult"] = "Your trail info wa>s added.";
-            //    return RedirectToAction("Index");
-            //}
-            //ModelState.AddModelError("", "Trail Info could not be added.");
-            //return View(model);
-            if (!ModelState.IsValid && model.TrailTrackerID != 0) return View(model);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            if (!ModelState.IsValid) return View(model);
             var service = CreateTrailsInfoService();
+            //var trailService = new TrailService(userId);
             if (service.CreateTrailsInfo(model))
             {
-                ViewBag.TrailTrackerID = new SelectList(service.GetTrailsInfos(), "TrailTrackerID", "TrailName");
                 TempData["SaveResult"] = "Your trail info was added.";
                 return RedirectToAction("Index");
             };
             ModelState.AddModelError("", "Trail Info could not be added.");
+            ViewBag.TrailTrackerID = new SelectList(service.GetTrails(), "TrailTrackerID", "TrailName", model.TrailTrackerID);
             return View(model);
         }
         private TrailsInfoService CreateTrailsInfoService()
@@ -89,6 +77,7 @@ namespace TrailTrackerMVC.Controllers
                 {
                     TrailTrackerID = detail.TrailTrackerID,
                     TrailInfoID = detail.TrailInfoID,
+                    //TrailName = detail.Trail.TrailName,
                     Rating = detail.Rating,
                     TrailComments = detail.TrailComments,
                     NoteableSites = detail.NoteableSites
