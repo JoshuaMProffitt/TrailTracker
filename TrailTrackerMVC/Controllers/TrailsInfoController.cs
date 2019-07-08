@@ -77,7 +77,7 @@ namespace TrailTrackerMVC.Controllers
                 {
                     TrailTrackerID = detail.TrailTrackerID,
                     TrailInfoID = detail.TrailInfoID,
-                    //TrailName = detail.Trail.TrailName,
+                    TrailName = detail.TrailName,
                     Rating = detail.Rating,
                     TrailComments = detail.TrailComments,
                     NoteableSites = detail.NoteableSites

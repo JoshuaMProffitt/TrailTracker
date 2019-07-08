@@ -48,6 +48,7 @@ namespace TrailTracker.Services
                                 {
                                     TrailInfoID = e.TrailInfoID,
                                     TrailTrackerID = e.TrailTrackerID,
+                                    TrailName = e.Trail.TrailName,
                                     Rating = e.Rating,
                                     TrailComments = e.TrailComments,
                                     NoteableSites = e.NoteableSites,
