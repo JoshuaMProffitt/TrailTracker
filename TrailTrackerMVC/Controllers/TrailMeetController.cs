@@ -71,7 +71,6 @@ namespace TrailTrackerMVC.Controllers
                     TrailTrackerID = detail.TrailTrackerID,
                     TrailName = detail.TrailName,
                     OfTrailType = detail.OfTrailType,
-                    Picture = detail.Picture,
                     MeetTime = detail.MeetTime,
                     MeetComments = detail.MeetComments
                 };

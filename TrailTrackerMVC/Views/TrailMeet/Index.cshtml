@@ -3,92 +3,86 @@
 @{
     ViewBag.Title = "Index";
 }
+<div class="view-background-1">
+    <h2>Index</h2>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Picture)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TrailName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.JoinTrail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MeetTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MeetComments)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    @if (TempData.ContainsKey("SaveResult"))
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Picture)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TrailName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.JoinTrail, new { Id = item.TrailMeetID })
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MeetTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MeetComments)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.TrailMeetID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.TrailMeetID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.TrailMeetID })
-            </td>
-        </tr>
+        <div class="alert alert-success fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
     }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TrailName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JoinTrail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MeetTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MeetComments)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
-@section scripts {
-    <script language="javascript" type="text/javascript">
-        $(document).ready(function () {
-            $("i[data-toggle='star']")
-                .css({ "cursor": "pointer" })
-                .click(function (e) {
-                    var target = $(e.target);
-                    var trailMeetId = target.attr("data-id");
-                    var starSet = target.hasClass("glyphicon-star");
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrailName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JoinTrail, new { Id = item.TrailMeetID })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MeetTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MeetComments)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TrailMeetID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.TrailMeetID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TrailMeetID })
+                </td>
+            </tr>
+        }
 
-                    $.ajax({
-                        method: starSet ? "DELETE" : "PUT",
-                        url: "/api/trailMeet/" + trailMeetId + "/star",
-                        data: null
-                    })
-                        .done(function (r) {
-                            target.removeClass();
-                            target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
+    </table>
+    @section scripts {
+        <script language="javascript" type="text/javascript">
+            $(document).ready(function () {
+                $("i[data-toggle='star']")
+                    .css({ "cursor": "pointer" })
+                    .click(function (e) {
+                        var target = $(e.target);
+                        var trailMeetId = target.attr("data-id");
+                        var starSet = target.hasClass("glyphicon-star");
+
+                        $.ajax({
+                            method: starSet ? "DELETE" : "PUT",
+                            url: "/api/trailMeet/" + trailMeetId + "/star",
+                            data: null
                         })
-                        .fail(function (r) {
-                            alert("Failed to change star status");
-                        });
-                });
-        });
-    </script>
-}
-
+                            .done(function (r) {
+                                target.removeClass();
+                                target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
+                            })
+                            .fail(function (r) {
+                                alert("Failed to change star status");
+                            });
+                    });
+            });
+        </script>
+    }
+</div>

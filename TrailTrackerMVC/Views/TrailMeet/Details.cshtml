@@ -3,83 +3,82 @@
 @{
     ViewBag.Title = "Details";
 }
+<div class="view-background-1">
+    <h2>Details</h2>
 
-<h2>Details</h2>
+    <div>
+        <h4>TrailMeetDetail</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            @if (Model.Files.Any(ff => ff.FileType == TrailTracker.Data.FileType.Picture))
+            {
+                <dt>
+                    Trail Photo
+                </dt>
+                <dd>
+                    <img src="~/File?id=@Model.Files.First(f => f.FileType == TrailTracker.Data.FileType.Picture).PhotoId" alt="avatar" />
+                </dd>
+            }
 
-<div>
-    <h4>TrailMeetDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-
-        @if (Model.Files.Any(ff => ff.FileType == TrailTracker.Data.FileType.Picture))
-        {
             <dt>
-                Trail Photo
+                @Html.DisplayNameFor(model => model.TrailMeetID)
             </dt>
+
             <dd>
-                <img src="~/File?id=@Model.Files.First(f => f.FileType == TrailTracker.Data.FileType.Picture).PhotoId" alt="avatar" />
+                @Html.DisplayFor(model => model.TrailMeetID)
             </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TrailName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TrailName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MeetTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MeetTime)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MeetComments)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MeetComments)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedUtc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CreatedUtc)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedUtc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedUtc)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.TrailMeetID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+    <style>
+        img {
+            max-height: 10%;
+            max-width: 10%;
         }
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TrailMeetID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TrailMeetID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TrailName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TrailName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Picture)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Picture)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MeetTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MeetTime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MeetComments)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MeetComments)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreatedUtc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedUtc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedUtc)
-        </dd>
-
-    </dl>
+    </style>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TrailMeetID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
