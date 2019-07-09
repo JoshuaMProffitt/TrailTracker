@@ -18,6 +18,20 @@ namespace TrailTracker.Services
         }
         public bool CreateTrailMeet(TrailMeetCreate model)
         {
+            if (model.Upload != null && model.Upload.ContentLength > 0)
+            {
+                var avatar = new Photo
+                {
+                    PhotoName = System.IO.Path.GetFileName(model.Upload.FileName),
+                    FileType = FileType.Picture,
+                    ContentType = model.Upload.ContentType
+                };
+                using (var reader = new System.IO.BinaryReader(model.Upload.InputStream))
+                {
+                    avatar.Content = reader.ReadBytes(model.Upload.ContentLength);
+                }
+                model.Files = new List<Photo> { avatar };
+            }
             var entity =
                 new TrailMeet()
                 {
@@ -27,12 +41,14 @@ namespace TrailTracker.Services
                     Picture = model.Picture,
                     MeetTime = model.MeetTime,
                     MeetComments = model.MeetComments,
-                    CreatedUtc = DateTimeOffset.Now
+                    CreatedUtc = DateTimeOffset.Now,
+                    Files = model.Files,
+                    Upload = model.Upload
                 };
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.TrailMeets.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges() >= 1;
             }
         }
         public IEnumerable<TrailMeetListItem> GetTrailMeets()
@@ -80,7 +96,8 @@ namespace TrailTracker.Services
                         MeetTime = entity.MeetTime,
                         MeetComments = entity.MeetComments,
                         CreatedUtc = entity.CreatedUtc,
-                        ModifiedUtc = entity.ModifiedUtc
+                        ModifiedUtc = entity.ModifiedUtc,
+                        Files = entity.Files
                     };
             }
         }

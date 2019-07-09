@@ -10,6 +10,17 @@
     <h4>TrailMeetDetail</h4>
     <hr />
     <dl class="dl-horizontal">
+
+        @if (Model.Files.Any(ff => ff.FileType == TrailTracker.Data.FileType.Picture))
+        {
+            <dt>
+                Trail Photo
+            </dt>
+            <dd>
+                <img src="~/File?id=@Model.Files.First(f => f.FileType == TrailTracker.Data.FileType.Picture).PhotoId" alt="avatar" />
+            </dd>
+        }
+
         <dt>
             @Html.DisplayNameFor(model => model.TrailMeetID)
         </dt>
@@ -69,6 +80,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TrailMeetID}) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrailMeetID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

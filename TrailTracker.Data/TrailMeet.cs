@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace TrailTracker.Data
 {
@@ -30,5 +31,8 @@ namespace TrailTracker.Data
         [ForeignKey(nameof(Trail))]
         public int TrailTrackerID { get; set; }
         public virtual Trail Trail { get; set; }
+        [NotMapped]
+        public HttpPostedFileBase Upload { get; set; }
+        public virtual ICollection<Photo> Files { get; set; }
     }
 }

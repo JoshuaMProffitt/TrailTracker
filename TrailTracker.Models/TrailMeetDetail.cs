@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,9 @@ namespace TrailTracker.Models
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]
         public DateTimeOffset ModifiedUtc { get; set; }
+        [ForeignKey("Photo")]
+        public int PhotoId { get; set; }
+        public virtual ICollection<Photo> Files { get; set; }
         public override string ToString() => $"[{TrailMeetID}]  {TrailTrackerID} {TrailName} {OfTrailType} {Picture} {MeetTime} {MeetComments}";
     }
 }
