@@ -14,10 +14,13 @@ namespace TrailTracker.Models
     {
         [Display(Name = "Trail Meet ID")]
         public int TrailMeetID { get; set; }
+        public int TrailTrackerID { get; set; }
+        [Display(Name = "Trail Name")]
+        public string TrailName { get; set; }
         public TrailType OfTrailType { get; set; }
         public string Picture { get; set; }
         [UIHint("JoinedTrail")]
-        [Display(Name ="Join Trail")]
+        [Display(Name ="Favorite Trail")]
         public bool JoinTrail { get; set; }
         [Display(Name = "Meetup Time")]
         public DateTime MeetTime { get; set; }

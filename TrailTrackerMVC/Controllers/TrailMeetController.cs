@@ -23,12 +23,17 @@ namespace TrailTrackerMVC.Controllers
         // GET
         public ActionResult Create()
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var TrailMeetService = new TrailMeetService(userId);
+
+            ViewBag.TrailTrackerID = new SelectList(TrailMeetService.GetTrails(), "TrailTrackerID", "TrailName");
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(TrailMeetCreate model)
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
             if (!ModelState.IsValid) return View(model);
 
             var service = CreateTrailMeetService();
@@ -39,7 +44,7 @@ namespace TrailTrackerMVC.Controllers
                 return RedirectToAction("Index");
             };
             ModelState.AddModelError("", "Trail Meetup could not be Created.");
-
+            ViewBag.TrailTrackerID = new SelectList(service.GetTrails(), "TrailTrackerID", "TrailName", model.TrailTrackerID);
             return View(model);
         }
         private TrailMeetService CreateTrailMeetService()
@@ -63,11 +68,14 @@ namespace TrailTrackerMVC.Controllers
                 new TrailMeetEdit
                 {
                     TrailMeetID = detail.TrailMeetID,
+                    TrailTrackerID = detail.TrailTrackerID,
+                    TrailName = detail.TrailName,
                     OfTrailType = detail.OfTrailType,
                     Picture = detail.Picture,
                     MeetTime = detail.MeetTime,
                     MeetComments = detail.MeetComments
                 };
+            ViewBag.TrailTrackerID = new SelectList(service.GetTrails(), "TrailTrackerID", "TrailName", model.TrailTrackerID);
             return View(model);
         }
         [HttpPost]

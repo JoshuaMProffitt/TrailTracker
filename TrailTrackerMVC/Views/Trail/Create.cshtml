@@ -56,14 +56,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Elevation, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Elevation, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Elevation, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.SpotsAvailable, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.SpotsAvailable, new { htmlAttributes = new { @class = "form-control" } })

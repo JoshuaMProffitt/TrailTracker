@@ -22,6 +22,7 @@ namespace TrailTracker.Services
                 new TrailMeet()
                 {
                     OwnerID = _userId,
+                    TrailTrackerID = model.TrailTrackerID,
                     OfTrailType = model.OfTrailType,
                     Picture = model.Picture,
                     MeetTime = model.MeetTime,
@@ -47,6 +48,8 @@ namespace TrailTracker.Services
                                 new TrailMeetListItem
                                 {
                                     TrailMeetID = e.TrailMeetID,
+                                    TrailTrackerID = e.TrailTrackerID,
+                                    TrailName = e.Trail.TrailName,
                                     OfTrailType = e.OfTrailType,
                                     Picture = e.Picture,
                                     JoinTrail = e.JoinTrail,
@@ -70,6 +73,8 @@ namespace TrailTracker.Services
                     new TrailMeetDetail
                     {
                         TrailMeetID = entity.TrailMeetID,
+                        TrailTrackerID = entity.TrailTrackerID,
+                        TrailName = entity.Trail.TrailName,
                         OfTrailType = entity.OfTrailType,
                         Picture = entity.Picture,
                         MeetTime = entity.MeetTime,
@@ -87,6 +92,9 @@ namespace TrailTracker.Services
                     ctx
                         .TrailMeets
                         .Single(e => e.TrailMeetID == model.TrailMeetID && e.OwnerID == _userId);
+
+                entity.TrailMeetID = model.TrailMeetID;
+                entity.TrailTrackerID = model.TrailTrackerID;
                 entity.OfTrailType = model.OfTrailType;
                 entity.Picture = model.Picture;
                 entity.JoinTrail = model.JoinTrail;
@@ -109,6 +117,14 @@ namespace TrailTracker.Services
                 ctx.TrailMeets.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public List<Trail> GetTrails()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Trails.ToList();
             }
         }
     }

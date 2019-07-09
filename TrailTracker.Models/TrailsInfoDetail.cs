@@ -25,6 +25,6 @@ namespace TrailTracker.Models
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
-        public override string ToString() => $"[{TrailInfoID}] {Rating} {TrailComments} {NoteableSites}";
+        public override string ToString() => $"[{TrailInfoID}] {TrailTrackerID} {TrailName} {Rating} {TrailComments} {NoteableSites}";
     }
 }

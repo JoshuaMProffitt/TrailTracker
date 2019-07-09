@@ -27,6 +27,8 @@ namespace TrailTrackerMVC.Controllers.WebAPI
                 new TrailMeetEdit
                 {
                     TrailMeetID = detail.TrailMeetID,
+                    TrailTrackerID = detail.TrailTrackerID,
+                    TrailName = detail.TrailName,
                     OfTrailType = detail.OfTrailType,
                     Picture = detail.Picture,
                     MeetTime = detail.MeetTime,

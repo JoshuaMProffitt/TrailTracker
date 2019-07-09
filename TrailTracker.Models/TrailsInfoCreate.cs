@@ -13,8 +13,6 @@ namespace TrailTracker.Models
     {
         [Display(Name = "Trail Info ID")]
         public int TrailInfoID { get; set; }
-
-        //[ForeignKey(nameof(Trail))]
         public int TrailTrackerID { get; set; }
         [Display(Name = "Trail Name")]
         public string TrailName { get; set; }

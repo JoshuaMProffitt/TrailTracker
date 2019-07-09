@@ -27,13 +27,8 @@ namespace TrailTrackerMVC.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-
             var userId = Guid.Parse(User.Identity.GetUserId());
             var TrailsInfoService = new TrailsInfoService(userId);
-
-            //var TrailService = new TrailService(userId);
-
-            //var TrailsInfos = TrailService.GetTrails();
 
             ViewBag.TrailTrackerID = new SelectList(TrailsInfoService.GetTrails(), "TrailTrackerID", "TrailName");
             return View();
@@ -45,10 +40,10 @@ namespace TrailTrackerMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             if (!ModelState.IsValid) return View(model);
             var service = CreateTrailsInfoService();
-            //var trailService = new TrailService(userId);
+
             if (service.CreateTrailsInfo(model))
             {
-                TempData["SaveResult"] = "Your trail info was added.";
+                TempData["SaveResult"] = "Your Trail Info was added.";
                 return RedirectToAction("Index");
             };
             ModelState.AddModelError("", "Trail Info could not be added.");
@@ -75,14 +70,14 @@ namespace TrailTrackerMVC.Controllers
             var model =
                 new TrailsInfoEdit
                 {
-                    TrailTrackerID = detail.TrailTrackerID,
                     TrailInfoID = detail.TrailInfoID,
+                    TrailTrackerID = detail.TrailTrackerID,
                     TrailName = detail.TrailName,
                     Rating = detail.Rating,
                     TrailComments = detail.TrailComments,
                     NoteableSites = detail.NoteableSites
                 };
-            ViewBag.TrailTrackerID = new SelectList(_db.Trails.ToList(), "TrailTrackerID", "TrailName");
+            ViewBag.TrailTrackerID = new SelectList(service.GetTrails(), "TrailTrackerID", "TrailName", model.TrailTrackerID);
             return View(model);
         }
         [HttpPost]

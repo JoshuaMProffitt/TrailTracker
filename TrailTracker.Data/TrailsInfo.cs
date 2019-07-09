@@ -12,7 +12,6 @@ namespace TrailTracker.Data
     {
         [Key]
         public int TrailInfoID { get; set; }
-        //public string TrailName { get; set; }
         public Guid OwnerID { get; set; }
         public int Rating { get; set; }
         public string TrailComments { get; set; }
