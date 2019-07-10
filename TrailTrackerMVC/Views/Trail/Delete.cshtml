@@ -3,104 +3,106 @@
 @{
     ViewBag.Title = "Delete";
 }
-<div class="view-background-1">
-    <h2>Delete</h2>
+<div class="view-background-2">
+    <div class="view-background-1">
+        <h2>Delete</h2>
 
-    <h3>Are you sure you want to delete this?</h3>
-    <div>
-        <h4>TrailDetail</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.TrailTrackerID)
-            </dt>
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+            <h4>TrailDetail</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.TrailTrackerID)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.TrailTrackerID)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.TrailTrackerID)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.TrailName)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.TrailName)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.TrailName)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.TrailName)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Description)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Location)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Location)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Location)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Location)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Miles)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Miles)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Miles)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Miles)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Difficulty)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Difficulty)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Difficulty)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Difficulty)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.SpotsAvailable)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.SpotsAvailable)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.SpotsAvailable)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.SpotsAvailable)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.AverageTimeMinutes)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.AverageTimeMinutes)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.AverageTimeMinutes)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.AverageTimeMinutes)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.CreatedUtc)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.CreatedUtc)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.CreatedUtc)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.CreatedUtc)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.ModifiedUtc)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ModifiedUtc)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.ModifiedUtc)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.ModifiedUtc)
+                </dd>
 
-        </dl>
+            </dl>
 
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
-            </div>
-        }
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    <button>@Html.ActionLink("Back to List", "Index")</button>
+                </div>
+            }
+        </div>
     </div>
 </div>
