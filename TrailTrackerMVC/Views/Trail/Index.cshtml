@@ -66,11 +66,9 @@
                         @Html.DisplayFor(modelItem => item.AverageTimeMinutes)
                     </td>
                     <td>
-                        <button>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.TrailTrackerID }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.TrailTrackerID }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.TrailTrackerID })
-                        </button>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.TrailTrackerID }, new { @class = "buttonWhite" })
+                        @Html.ActionLink("Details", "Details", new { id = item.TrailTrackerID }, new { @class = "buttonWhite" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.TrailTrackerID }, new { @class = "buttonWhite" })
                     </td>
                 </tr>
             }
@@ -78,7 +76,7 @@
         </table>
         <div class="wrapper">
             <a>
-                @Html.ActionLink("Create New", "Create", null, new { @class = "btn_fab"})
+                @Html.ActionLink("Create New", "Create", null, new { @class = "btn_fab" })
             </a>
         </div>
     </div>

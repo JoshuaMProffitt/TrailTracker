@@ -167,7 +167,6 @@ textarea {
     color: #fff;
     text-transform: uppercase;
     font-family: 'Lato', sans-serif;
-    letter-spacing: 5px;
     font-size: 12px;
     border: 2px solid #fff;
     padding: 5px 15px;
@@ -245,3 +244,40 @@ a.btn_fab:hover:before {
         left: auto;
     }
 }
+
+.buttonWhite {
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    z-index: 3;
+    background: transparent;
+    color: white;
+    font-size: 13px;
+    border-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 22px;
+    padding: 3px 13px;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+    text-decoration: none;
+}
+
+/*.outline {
+    color: black;
+    background: white;
+    border-color: white;
+    transition: all 0.2s linear;
+    position: relative;
+    z-index: 3;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    border-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 22px;
+    padding: 10px 40px;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+}*/
