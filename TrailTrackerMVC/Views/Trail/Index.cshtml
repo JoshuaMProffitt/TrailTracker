@@ -76,10 +76,10 @@
             }
 
         </table>
-        <p>
-            <button> @Html.ActionLink("Create New", "Create")</button>
-        </p>
-        @*@Html.ActionLink("Create A New Invoice", "Create", "Travel", null, new { @class = "btn btn-primary btn-large" })*@
-        @*<button type="button" class="btn btn-dark">Dark</button>*@
+        <div class="wrapper">
+            <a>
+                @Html.ActionLink("Create New", "Create", null, new { @class = "btn_fab"})
+            </a>
+        </div>
     </div>
 </div>

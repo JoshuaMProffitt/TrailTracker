@@ -83,10 +83,12 @@
                 });
             </script>
         }
-        <p>
-        <button>
-            @Html.ActionLink("Create New", "Create")
-        </button>
-        </p>
+    <p>
+        <div class="wrapper">
+            <a>
+                @Html.ActionLink("Create New", "Create", null, new { @class = "btn_fab" })
+            </a>
+        </div>
+    </p>
     </div>
 </div>
