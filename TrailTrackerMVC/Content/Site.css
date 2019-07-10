@@ -47,6 +47,7 @@ textarea {
     padding-top: 3%;
     padding-bottom: 5%;
 }
+
 .view-background-1 {
     padding-top: 2%;
     padding-bottom: 2%;
@@ -57,12 +58,14 @@ textarea {
     z-index: 0;
     border-radius: 5%;
 }
+
 .Background-1 {
     background: rgba(0, 0, 0, .90);
     z-index: 0;
     position: relative;
     min-height: 93vh;
 }
+
 .Footer-1 {
     color: white;
     vertical-align: bottom;
@@ -164,7 +167,7 @@ textarea {
 }
 
 .btn_fab {
-    color: #fff;
+    color: black;
     text-transform: uppercase;
     font-family: 'Lato', sans-serif;
     font-size: 12px;
@@ -172,6 +175,7 @@ textarea {
     padding: 5px 15px;
     position: relative;
     cursor: pointer;
+    border-radius: 13px;
 }
 
 a.btn_fab:hover {
@@ -196,9 +200,9 @@ a.btn_fab:hover {
 a.btn_fab:before {
     position: absolute;
     content: "";
-    width: 10px;
+    width: 8px;
     height: 2px;
-    left: 0;
+    left: 1px;
     top: 22px;
     background-color: #fff;
     animation-name: right-to-left;
@@ -207,16 +211,16 @@ a.btn_fab:before {
 
 @-webkit-keyframes right-to-left {
     0% {
-        width: 100%;
+        width: 90%;
     }
 
     50% {
-        width: 100%;
+        width: 90%;
         right: 0;
     }
 
     100% {
-        width: 10px;
+        width: 9px;
         left: 0;
         right: auto;
     }
@@ -247,37 +251,36 @@ a.btn_fab:hover:before {
 
 .buttonWhite {
     cursor: pointer;
-    outline: none;
     position: relative;
     z-index: 3;
     background: transparent;
-    color: white;
-    font-size: 13px;
+    color: black;
+    font-size: 12px;
     border-color: white;
     border-style: solid;
-    border-width: 2px;
-    border-radius: 22px;
+    border-width: 1px;
+    border-radius: 13px;
     padding: 3px 13px;
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
 }
 
-/*.outline {
-    color: black;
-    background: white;
-    border-color: white;
-    transition: all 0.2s linear;
-    position: relative;
-    z-index: 3;
-    background: transparent;
-    color: white;
-    font-size: 14px;
-    border-color: white;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 22px;
-    padding: 10px 40px;
-    text-transform: uppercase;
-    transition: all 0.2s linear;
-}*/
+    .buttonWhite:hover {
+        color: black;
+        background: white;
+        border-color: white;
+        transition: all 0.2s linear;
+        position: relative;
+        z-index: 3;
+        background: black;
+        color: white;
+        font-size: 12px;
+        border-color: white;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 13px;
+        padding: 3px 13px;
+        text-transform: uppercase;
+        transition: all 0.2s linear;
+    }

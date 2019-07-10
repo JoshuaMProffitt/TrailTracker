@@ -94,12 +94,8 @@
 
                 </dl>
             </div>
-            <p>
-                <button>
-                    @Html.ActionLink("Edit", "Edit", new { id = Model.TrailTrackerID }) |
-                    @Html.ActionLink("Back to List", "Index")
-                </button>
-            </p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.TrailTrackerID }, new { @class = "buttonWhite" })
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "buttonWhite" })
         </div>
     </div>
 </div>
