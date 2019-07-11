@@ -48,11 +48,9 @@
                         @Html.DisplayFor(modelItem => item.NoteableSites)
                     </td>
                     <td>
-                        <button>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.TrailInfoID }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.TrailInfoID }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.TrailInfoID })
-                        </button>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.TrailInfoID }, new { @class = "buttonWhite" }) 
+                            @Html.ActionLink("Details", "Details", new { id = item.TrailInfoID }, new { @class = "buttonWhite" }) 
+                            @Html.ActionLink("Delete", "Delete", new { id = item.TrailInfoID }, new { @class = "buttonWhite" })
                     </td>
                 </tr>
             }
@@ -60,7 +58,7 @@
         <p>
             <div class="wrapper">
                 <a>
-                    @Html.ActionLink("Create New", "Create", null, new { @class = "btn_fab" })
+                    @Html.ActionLink("Create New", "Create", null, new { @class = "buttonWhite" })
                 </a>
             </div>
         </p>

@@ -71,13 +71,8 @@
 
             </dl>
         </div>
-        <p>
-            <button>
-                @Html.ActionLink("Edit", "Edit", new { id = Model.TrailMeetID }) |
-                @Html.ActionLink("Back to List", "Index")
-            </button>
-        </p>
-
+                @Html.ActionLink("Edit", "Edit", new { id = Model.TrailMeetID }, new { @class = "buttonWhite" }) 
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "buttonWhite" })
         <style>
             img {
                 max-height: 10%;

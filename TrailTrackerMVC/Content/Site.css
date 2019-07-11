@@ -25,7 +25,7 @@ textarea {
 
 .Homebackground {
     padding-top: 2%;
-    padding-bottom: 19.45%;
+    padding-bottom: 28.45%;
     padding-left: 20%;
     padding-right: 20%;
     background-image: url("https://cdn.pixabay.com/photo/2016/03/09/16/46/hiking-1246836_1280.jpg");
@@ -35,8 +35,17 @@ textarea {
 }
 
 .Homebackground-2 {
-    padding-top: 2%;
-    padding-bottom: .55%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+    padding-left: 1%;
+    background-color: rgba(255, 255, 255, .9);
+    z-index: 1;
+    border-radius: 1%;
+}
+
+.Homebackground-3 {
+ margin-top: 1%;
 }
 
 .jumbotron {
@@ -60,7 +69,7 @@ textarea {
 }
 
 .Background-1 {
-    background: rgba(0, 0, 0, .95);
+    background: rgba(0, 0, 0, .9);
     z-index: 0;
     position: relative;
     min-height: 93vh;
@@ -92,71 +101,6 @@ textarea {
     text-align: center;
 }
 
-.form-2 {
-    <script> $(function()
-{
-    function after_form_submitted(data)
-    {
-        if(data.result == 'success')
-        {
-            $('form#reused_form').hide();
-            $('#success_message').show();
-            $('#error_message').hide();
-        }
-        else
-        {
-            $('#error_message').append('<ul></ul>');
-
-            jQuery.each(data.errors,function(key,val)
-            {
-                $('#error_message ul').append('<li>'+key+':'+val+'</li>');
-            });
-            $('#success_message').hide();
-            $('#error_message').show();
-
-            //reverse the response on the button
-            $('button[type="button"]', $form).each(function()
-            {
-                $btn = $(this);
-                label = $btn.prop('orig_label');
-                if(label)
-                {
-                    $btn.prop('type','submit' );
-                    $btn.text(label);
-                    $btn.prop('orig_label','');
-                }
-            });
-
-        }
-    }
-
-	$('#reused_form').submit(function(e)
-      {
-        e.preventDefault();
-
-        $form = $(this);
-        //show some response on the button
-        $('button[type="submit"]', $form).each(function()
-        {
-            $btn = $(this);
-            $btn.prop('type','button' );
-            $btn.prop('orig_label',$btn.text());
-            $btn.text('Sending ...');
-        });
-
-
-                    $.ajax({
-                type: "POST",
-                url: 'handler.php',
-                data: $form.serialize(),
-                success: after_form_submitted,
-                dataType: 'json'
-            });
-
-      });
-});
-    </script>
-}
 
 .Body-Section-1 {
 }
@@ -283,4 +227,20 @@ a.btn_fab:hover:before {
         padding: 3px 13px;
         text-transform: uppercase;
         transition: all 0.2s linear;
+        text-decoration: none;
     }
+.TrailPhoto {
+    border-radius: 1%;
+    width: 49.8%;
+    height: 350px;
+    padding-bottom: 3%;
+}
+.about-background-1 {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+    padding-left: 1%;
+    background-color: rgba(255, 255, 255, .9);
+    z-index: 1;
+    border-radius: 1%;
+}

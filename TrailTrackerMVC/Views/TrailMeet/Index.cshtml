@@ -48,11 +48,9 @@
                         @Html.DisplayFor(modelItem => item.MeetComments)
                     </td>
                     <td>
-                        <button>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.TrailMeetID }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.TrailMeetID }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.TrailMeetID })
-                        </button>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.TrailMeetID }, new { @class = "buttonWhite" }) 
+                            @Html.ActionLink("Details", "Details", new { id = item.TrailMeetID }, new { @class = "buttonWhite" }) 
+                            @Html.ActionLink("Delete", "Delete", new { id = item.TrailMeetID }, new { @class = "buttonWhite" })
                     </td>
                 </tr>
             }
@@ -84,11 +82,7 @@
             </script>
         }
     <p>
-        <div class="wrapper">
-            <a>
-                @Html.ActionLink("Create New", "Create", null, new { @class = "btn_fab" })
-            </a>
-        </div>
+                @Html.ActionLink("Create New", "Create", null, new { @class = "btn_fab" }, new { @class = "buttonWhite" })
     </p>
     </div>
 </div>
