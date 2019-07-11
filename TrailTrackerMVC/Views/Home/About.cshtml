@@ -4,10 +4,10 @@
 <body>
     <div class="view-background-2">
         <div class="view-background-1">
-            <h2>@ViewBag.Title.</h2>
+            @*<h2>@ViewBag.Title.</h2>*@
             @*<h3>@ViewBag.Message</h3>
 
-                <p>Use this area to provide additional information.</p>*@
+        <p>Use this area to provide additional information.</p>*@
             <div class="about-background-1">
                 <img class="TrailPhoto" src="https://cdn.pixabay.com/photo/2014/09/21/17/56/wanderer-455338_1280.jpg" alt="">
                 <img class="TrailPhoto" src="https://cdn.pixabay.com/photo/2016/01/19/01/11/hikers-1147796_1280.jpg" alt="">
@@ -16,6 +16,8 @@
                     Trails 4 You is a site that lets you see details about a trail, information about the trail from other users, and the ability to favorite trails you like.
                 </p>
             </div>
+            <br />
+            @Html.ActionLink("Home", "Index", "Home", null, new { @class = "buttonWhite" })
         </div>
     </div>
 </body>

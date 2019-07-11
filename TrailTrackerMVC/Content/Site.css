@@ -24,10 +24,10 @@ textarea {
 }
 
 .Homebackground {
-    padding-top: 2%;
-    padding-bottom: 24.45%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    padding-left: 5%;
+    padding-right: 5%;
     background-image: url("https://cdn.pixabay.com/photo/2016/03/09/16/46/hiking-1246836_1280.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -466,7 +466,7 @@ textarea {
     border-style: solid;
     border-width: 2px;
     border-radius: 1%;
-    padding: 10% 5%;
+    padding: 6% 5%;
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
@@ -476,7 +476,6 @@ textarea {
 .HomeButton:hover {
     color: black;
     background: white;
-    border-color: white;
     transition: all 0.2s linear;
     position: relative;
     z-index: 3;
@@ -487,11 +486,14 @@ textarea {
     border-style: solid;
     border-width: 2px;
     border-radius: 1%;
-    padding: 10% 5%;
+    padding: 6% 5%;
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
 }
 .TrailButtons{
 
+}
+.homepadding{
+    padding-top: 11%;
 }
