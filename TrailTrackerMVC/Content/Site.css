@@ -1,65 +1,47 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿/*Background all views*/
+body {
+    padding-top: 0%;
+    padding-bottom: 0%;
 }
-
-/* Set padding to keep content from hitting the edges */
 .body-content {
+    /* Set padding to keep content from hitting the edges */
     padding-left: 15px;
     padding-right: 15px;
 }
-
-/* Override the default bootstrap behavior where horizontal description lists 
+.dl-horizontal dt {
+    /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
     white-space: normal;
 }
-
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 270px;
+    /* Set width on the form input elements since they're 100% wide by default */
 }
-
-.Homebackground {
-    padding-top: 6%;
-    padding-bottom: 6%;
-    padding-left: 5%;
-    padding-right: 5%;
-    background-image: url("https://cdn.pixabay.com/photo/2016/03/09/16/46/hiking-1246836_1280.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
+.Background-1 {
+    background: rgba(0, 0, 0, .85);
     z-index: 0;
-    text-align: center;
+    position: relative;
+    min-height: 97vh;
 }
-
-.Homebackground-2 {
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-right: 1%;
-    padding-left: 1%;
-    background-color: rgba(255, 255, 255, .9);
+.Background-2 {
+    background-image: url("https://cdn.pixabay.com/photo/2017/12/17/19/08/away-3024773_1280.jpg");
     z-index: 1;
-    border-radius: 1%;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
-
-.Homebackground-3 {
-    margin-top: 1%;
+.Footer-1 {
+    color: white;
+    vertical-align: bottom;
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    padding-left: 10%;
+    text-align-last: left;
 }
-
-.jumbotron {
-    background-color: rgba(255, 255, 255, .0);
-    text-align: center;
-    text-shadow: 2px 2px #232323;
-}
-
-.view-background-2 {
-    padding-top: 3%;
-    padding-bottom: 5%;
-}
-
+/*Affects most views*/
 .view-background-1 {
     padding-top: 2%;
     padding-bottom: 2%;
@@ -70,37 +52,48 @@ textarea {
     z-index: 0;
     border-radius: 5%;
 }
-
-.Background-1 {
-    background: rgba(0, 0, 0, .92);
-    z-index: 0;
-    position: relative;
-    min-height: 93vh;
+.view-background-2 {
+    padding-top: 3%;
+    padding-bottom: 5%;
 }
-
-.Footer-1 {
-    color: white;
-    vertical-align: bottom;
-    position: absolute;
-    bottom: 0;
-    width: 90%;
-    padding-left: 10%;
-    text-align-last: left;
-}
-
-.Background-2 {
-    background-image: url("https://cdn.pixabay.com/photo/2017/12/17/19/08/away-3024773_1280.jpg");
-    z-index: 1;
-    background-size: 100%;
+/*Homebackground items*/
+.Homebackground {
+    padding-top: 1%;
+    padding-bottom: 15.5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-image: url("https://cdn.pixabay.com/photo/2016/03/09/16/46/hiking-1246836_1280.jpg");
     background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: 0;
+    text-align: center;
 }
-
+.Homebackground-2 {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+    padding-left: 1%;
+    background-color: rgba(255, 255, 255, .9);
+    z-index: 1;
+    border-radius: 1%;
+}
+.Homebackground-3 {
+    margin-top: 1%;
+}
+.jumbotron {
+    background-color: rgba(255, 255, 255, .0);
+    text-align: center;
+    text-shadow: 2px 2px #232323;
+}
+.homepadding {
+    padding-top: 11%;
+}
+/*Contact Page*/
 .form-0 {
     padding-top: 5%;
     padding-left: 41.5%;
     padding-right: 41.5%;
 }
-
 .form-1 {
     padding-top: 15.0%;
     padding-bottom: 15.0%;
@@ -110,12 +103,28 @@ textarea {
     text-align: center;
     border-radius: 5%
 }
-
-.Body-Section-1 {
+/*About Page*/
+.TrailPhoto {
+    border-radius: 1%;
+    width: 49.8%;
+    height: 350px;
+    padding-bottom: 3%;
 }
-
+.about-background-1 {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+    padding-left: 1%;
+    background-color: rgba(255, 255, 255, .9);
+    z-index: 1;
+    border-radius: 1%;
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    text-align: left;
+    font-weight: bold;
+}
+/*buttons*/
 .buttonWhite {
-    cursor: pointer;
     position: relative;
     z-index: 3;
     background: transparent;
@@ -123,19 +132,14 @@ textarea {
     font-size: 12px;
     border-color: white;
     border-style: solid;
-    border-width: .75px;
-    border-radius: 13px;
+    border-width: 1px;
     padding: 3px 13px;
+    border-radius: 13px;
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
 }
-
     .buttonWhite:hover {
-        color: black;
-        background: white;
-        border-color: white;
-        transition: all 0.2s linear;
         position: relative;
         z-index: 3;
         background: black;
@@ -144,15 +148,13 @@ textarea {
         border-color: white;
         border-style: solid;
         border-width: 1px;
-        border-radius: 13px;
         padding: 3px 13px;
+        border-radius: 13px;
         text-transform: uppercase;
         transition: all 0.2s linear;
         text-decoration: none;
     }
-
 .buttonRed {
-    cursor: pointer;
     position: relative;
     z-index: 3;
     background: transparent;
@@ -160,19 +162,14 @@ textarea {
     font-size: 12px;
     border-color: white;
     border-style: solid;
-    border-width: .75px;
-    border-radius: 13px;
+    border-width: 1px;
     padding: 3px 13px;
+    border-radius: 13px;
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
 }
-
     .buttonRed:hover {
-        color: black;
-        background: white;
-        border-color: white;
-        transition: all 0.2s linear;
         position: relative;
         z-index: 3;
         background: black;
@@ -181,8 +178,8 @@ textarea {
         border-color: white;
         border-style: solid;
         border-width: 1px;
-        border-radius: 13px;
         padding: 3px 13px;
+        border-radius: 13px;
         text-transform: uppercase;
         transition: all 0.2s linear;
         text-decoration: none;
@@ -192,7 +189,6 @@ textarea {
         animation-delay: 0s;
         animation-fill-mode: forwards;
     }
-
 @-webkit-keyframes change-background {
     0% {
         background: white;
@@ -434,32 +430,9 @@ textarea {
         border-color: white;
     }
 }
-
-.TrailPhoto {
-    border-radius: 1%;
-    width: 49.8%;
-    height: 350px;
-    padding-bottom: 3%;
-}
-
-.about-background-1 {
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-right: 1%;
-    padding-left: 1%;
-    background-color: rgba(255, 255, 255, .9);
-    z-index: 1;
-    border-radius: 1%;
-    font-family: 'Lato', sans-serif;
-    font-size: 19px;
-    text-align: left;
-    font-weight: bold;
-}
 .HomeButton {
-    cursor: pointer;
     position: relative;
     z-index: 3;
-    background: transparent;
     color: black;
     font-size: 30px;
     border-color: white;
@@ -472,28 +445,49 @@ textarea {
     text-decoration: none;
     background-color: rgba(255, 255, 255, .2);
 }
+    .HomeButton:hover {
+        position: relative;
+        z-index: 3;
+        color: white;
+        font-size: 30px;
+        border-color: white;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 1%;
+        padding: 6% 5%;
+        text-transform: uppercase;
+        transition: all 0.2s linear;
+        text-decoration: none;
+        background-color: rgba(0, 0, 0, .5);
+    }
 
-.HomeButton:hover {
-    color: black;
-    background: white;
-    transition: all 0.2s linear;
+.LogininButton {
     position: relative;
     z-index: 3;
-    background: black;
-    color: white;
-    font-size: 30px;
+    background: transparent;
+    color: black;
+    font-size: 12px;
     border-color: white;
     border-style: solid;
-    border-width: 2px;
-    border-radius: 1%;
-    padding: 6% 5%;
+    border-width: 1px;
+    padding: 3px 13px;
+    border-radius: 13px;
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
 }
-.TrailButtons{
-
-}
-.homepadding{
-    padding-top: 11%;
-}
+    .LogininButton:hover {
+        position: relative;
+        z-index: 3;
+        background: black;
+        color: white;
+        font-size: 12px;
+        border-color: white;
+        border-style: solid;
+        border-width: 1px;
+        padding: 3px 13px;
+        border-radius: 13px;
+        text-transform: uppercase;
+        transition: all 0.2s linear;
+        text-decoration: none;
+    }
