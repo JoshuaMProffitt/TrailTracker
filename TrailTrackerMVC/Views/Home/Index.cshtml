@@ -4,12 +4,28 @@
 <div class="Homebackground-3">
     <div class="Homebackground-2">
         <div class="Homebackground">
+
             <div class="jumbotron">
                 <h1>Trails 4 You</h1>
                 @*<p class="lead">Trails 4 You is a site that lets you see details about a trail, information about the trail from other users, and the ability to favorite trails you like</p>*@
                 @*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
             </div>
-
+            <div class="TrailButtons">
+                <p>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink("Trails", "Index", "Trail", null, new { @class = "HomeButton" })
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink("Trail Info", "Index", "TrailsInfo", null, new { @class = "HomeButton" })
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink("Trail Meetup", "Index", "TrailMeet", null, new { @class = "HomeButton" })
+                    }
+                </p>
+            </div>
             @*<div class="row">
                     <div class="col-md-4">
                         <h2>Getting started</h2>
