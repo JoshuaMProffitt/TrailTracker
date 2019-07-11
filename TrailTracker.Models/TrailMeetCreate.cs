@@ -23,7 +23,6 @@ namespace TrailTracker.Models
         [Display(Name = "Meet Comments")]
         public string MeetComments { get; set; }
         public override string ToString() => Picture;
-        
         public HttpPostedFileBase Upload { get; set; }
         [ForeignKey("Photo")]
         public int PhotoId { get; set; }

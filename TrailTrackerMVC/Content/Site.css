@@ -45,7 +45,7 @@ textarea {
 }
 
 .Homebackground-3 {
- margin-top: 1%;
+    margin-top: 1%;
 }
 
 .jumbotron {
@@ -71,7 +71,7 @@ textarea {
 }
 
 .Background-1 {
-    background: rgba(0, 0, 0, .9);
+    background: rgba(0, 0, 0, .92);
     z-index: 0;
     position: relative;
     min-height: 93vh;
@@ -88,6 +88,8 @@ textarea {
 .Background-2 {
     background-image: url("https://cdn.pixabay.com/photo/2017/12/17/19/08/away-3024773_1280.jpg");
     z-index: 1;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .form-0 {
@@ -97,66 +99,16 @@ textarea {
 }
 
 .form-1 {
-    padding-top: 3.5%;
-    padding-bottom: 3.5%;
+    padding-top: 15.0%;
+    padding-bottom: 15.0%;
+    padding-left: 3%;
+    padding-right: 75%;
     background-color: rgba(255, 255, 255, .5);
     text-align: center;
+    border-radius: 5%
 }
-
 
 .Body-Section-1 {
-}
-
-a.btn_fab:before {
-    position: absolute;
-    content: "";
-    width: 8px;
-    height: 2px;
-    left: 1px;
-    top: 22px;
-    background-color: #fff;
-    animation-name: right-to-left;
-    animation-duration: .3s;
-}
-
-@-webkit-keyframes right-to-left {
-    0% {
-        width: 90%;
-    }
-
-    50% {
-        width: 90%;
-        right: 0;
-    }
-
-    100% {
-        width: 9px;
-        left: 0;
-        right: auto;
-    }
-}
-
-a.btn_fab:hover:before {
-    animation-name: left-to-right;
-    animation-duration: .3s;
-    animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes left-to-right {
-    0% {
-        width: 10px;
-    }
-
-    50% {
-        width: 100%;
-        left: 0;
-    }
-
-    100% {
-        width: 10px;
-        right: 0;
-        left: auto;
-    }
 }
 
 .buttonWhite {
@@ -194,29 +146,299 @@ a.btn_fab:hover:before {
         text-transform: uppercase;
         transition: all 0.2s linear;
         text-decoration: none;
+    }
+
+.buttonRed {
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+    background: transparent;
+    color: black;
+    font-size: 12px;
+    border-color: white;
+    border-style: solid;
+    border-width: .75px;
+    border-radius: 13px;
+    padding: 3px 13px;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+    text-decoration: none;
+}
+
+    .buttonRed:hover {
+        color: black;
+        background: white;
+        border-color: white;
+        transition: all 0.2s linear;
+        position: relative;
+        z-index: 3;
+        background: black;
+        color: white;
+        font-size: 12px;
+        border-color: white;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 13px;
+        padding: 3px 13px;
+        text-transform: uppercase;
+        transition: all 0.2s linear;
+        text-decoration: none;
         animation-name: change-background;
-        animation-duration: .3s;
-        -webkit-animation-delay: .3s; /* Chrome, Safari, Opera */
-        animation-delay: .3s;
+        animation-duration: 1s;
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
         animation-fill-mode: forwards;
     }
+
 @-webkit-keyframes change-background {
     0% {
         background: white;
-        color: black
+        color: red;
+        border-color: red;
     }
 
-    100% {
+    1% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    2% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    3% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    4% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    5% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    6% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    7% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    8% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    9% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    10% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    11% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    12% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    13% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    14% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    15% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    16% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    17% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    18% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    19% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    20% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    21% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    22% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    23% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    24% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    25% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    26% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    27% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    28% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    29% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    30% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    31% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    32% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    33% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    34% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    35% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    36% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    37% {
+        background: red;
+        color: white;
+        border-color: white;
+    }
+
+    38% {
+        background: white;
+        color: red;
+        border-color: red;
+    }
+
+    39% {
         background: black;
         color: white;
+        border-color: white;
     }
 }
+
 .TrailPhoto {
     border-radius: 1%;
     width: 49.8%;
     height: 350px;
     padding-bottom: 3%;
 }
+
 .about-background-1 {
     padding-top: 1%;
     padding-bottom: 1%;
