@@ -17,14 +17,14 @@ body {
 input,
 select,
 textarea {
-    max-width: 270px;
+    max-width: 280px;
     /* Set width on the form input elements since they're 100% wide by default */
 }
 .Background-1 {
     background: rgba(0, 0, 0, .85);
     z-index: 0;
     position: relative;
-    min-height: 97vh;
+    min-height: 100vh;
 }
 .Background-2 {
     background-image: url("https://cdn.pixabay.com/photo/2017/12/17/19/08/away-3024773_1280.jpg");
@@ -465,12 +465,12 @@ textarea {
     position: relative;
     z-index: 3;
     background: transparent;
-    color: black;
+    color: white;
     font-size: 12px;
     border-color: white;
     border-style: solid;
     border-width: 1px;
-    padding: 3px 13px;
+    padding: 2% 3%;
     border-radius: 13px;
     text-transform: uppercase;
     transition: all 0.2s linear;
@@ -485,9 +485,13 @@ textarea {
         border-color: white;
         border-style: solid;
         border-width: 1px;
-        padding: 3px 13px;
+        padding: 2% 3%;
         border-radius: 13px;
         text-transform: uppercase;
         transition: all 0.2s linear;
         text-decoration: none;
     }
+LogininInfomation {
+    top: 1%;
+    left: 60%;
+}
