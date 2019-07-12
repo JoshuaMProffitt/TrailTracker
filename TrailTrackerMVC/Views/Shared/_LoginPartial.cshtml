@@ -4,19 +4,16 @@
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
     {
         @Html.AntiForgeryToken()
-        <LogininInfomation>
-            <li>
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "LogininButton" })
-                <button class="LogininButton">Log off</button>
-            </li>
-        </LogininInfomation>
+        <div class="LogininInfomation">
+            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "LogininButton" })
+            <button class="LogininButton">Log off</button>
+        </div>
     }
 }
 else
 {
-    <LogininInfomation>
-        <li>
-            @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "LogininButton" }) @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "LogininButton" })
-        </li>
-    </LogininInfomation>
+    <div class="LogininInfomation">
+        @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "LogininButton" })
+        @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "LogininButton" })
+    </div>
 }
