@@ -464,11 +464,10 @@ textarea {
         text-decoration: none;
         background-color: rgba(0, 0, 0, .5);
     }
-
 .LogininButton {
     position: relative;
     z-index: 2;
-    background: gray;
+    background: rgba(128, 128, 128, .3);
     color: white;
     font-size: 12px;
     border-color: white;
