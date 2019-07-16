@@ -60,6 +60,9 @@ textarea {
     padding-top: 3%;
     padding-bottom: 5%;
 }
+h2{
+    text-align: center;
+}
 /*Homebackground items*/
 .Homebackground {
     padding-top: 0%;
@@ -134,10 +137,10 @@ textarea {
     background: transparent;
     color: black;
     font-size: 12px;
-    border-color: white;
+    border-color: black;
     border-style: solid;
     border-width: 1px;
-    padding: 3px 13px;
+    padding: 5px 13px;
     border-radius: 13px;
     text-transform: uppercase;
     transition: all 0.2s linear;
@@ -152,7 +155,7 @@ textarea {
         border-color: white;
         border-style: solid;
         border-width: 1px;
-        padding: 3px 13px;
+        padding: 5px 13px;
         border-radius: 13px;
         text-transform: uppercase;
         transition: all 0.2s linear;
@@ -164,7 +167,7 @@ textarea {
     background: transparent;
     color: black;
     font-size: 12px;
-    border-color: white;
+    border-color: black;
     border-style: solid;
     border-width: 1px;
     padding: 3px 13px;
@@ -494,3 +497,8 @@ textarea {
         transition: all 0.2s linear;
         text-decoration: none;
     }
+/*Tables*/
+
+#tableId {
+    background-color: rgba(0, 255, 43, 0.10);
+}

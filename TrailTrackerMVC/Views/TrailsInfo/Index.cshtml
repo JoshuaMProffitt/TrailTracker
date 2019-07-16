@@ -5,7 +5,7 @@
 }
 <div class="view-background-2">
     <div class="view-background-1">
-        <h2>Index</h2>
+        <h2>Trail Information</h2>
         @if (TempData.ContainsKey("SaveResult"))
         {
             <div class="alert alert-success fade in" role="alert">
@@ -15,7 +15,7 @@
                 @TempData["SaveResult"]
             </div>
         }
-        <table class="table">
+        <table class="table table-bordered" id="tableId">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.TrailName)

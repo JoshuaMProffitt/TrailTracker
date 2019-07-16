@@ -17,11 +17,11 @@
                     }
                     @if (User.Identity.IsAuthenticated)
                     {
-                        @Html.ActionLink("Trail Info", "Index", "TrailsInfo", null, new { @class = "HomeButton" })
+                        @Html.ActionLink("Info", "Index", "TrailsInfo", null, new { @class = "HomeButton" })
                     }
                     @if (User.Identity.IsAuthenticated)
                     {
-                        @Html.ActionLink("Trail Meetup", "Index", "TrailMeet", null, new { @class = "HomeButton" })
+                        @Html.ActionLink("Meetup", "Index", "TrailMeet", null, new { @class = "HomeButton" })
                     }
                     <br /><div class="homepadding"></div>
                     @Html.ActionLink("About", "About", "Home", null, new { @class = "HomeButton" })
