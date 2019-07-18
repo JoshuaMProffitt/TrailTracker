@@ -5,7 +5,7 @@
 }
 <div class="view-background-2">
     <div class="view-background-1">
-        <h2></h2>
+        <h2>Trail Meetup</h2>
         @if (TempData.ContainsKey("SaveResult"))
         {
             <div class="alert alert-success fade in" role="alert">
@@ -24,6 +24,9 @@
                     @Html.DisplayNameFor(model => model.JoinTrail)
                 </th>
                 <th>
+                    @Html.DisplayNameFor(model => model.OfTrailType)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.MeetTime)
                 </th>
                 <th>
@@ -34,25 +37,28 @@
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TrailName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.JoinTrail, new { Id = item.TrailMeetID })
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MeetTime)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MeetComments)
-                    </td>
-                    <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.TrailMeetID }, new { @class = "buttonWhite" }) 
-                            @Html.ActionLink("Details", "Details", new { id = item.TrailMeetID }, new { @class = "buttonWhite" }) 
-                            @Html.ActionLink("Delete", "Delete", new { id = item.TrailMeetID }, new { @class = "buttonWhite" })
-                    </td>
-                </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrailName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JoinTrail, new { Id = item.TrailMeetID })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfTrailType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeetTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeetComments)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TrailMeetID }, new { @class = "buttonWhite" })
+                @Html.ActionLink("Details", "Details", new { id = item.TrailMeetID }, new { @class = "buttonWhite" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.TrailMeetID }, new { @class = "buttonWhite" })
+            </td>
+        </tr>
             }
         </table>
         @section scripts {

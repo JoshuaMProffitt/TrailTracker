@@ -15,6 +15,7 @@ namespace TrailTracker.Models
         public int TrailTrackerID { get; set; }
         [Display(Name = "Trail Name")]
         public string TrailName { get; set; }
+        [Display(Name = "Trail Type")]
         public TrailType OfTrailType { get; set; }
         public string Picture { get; set; }
         [Display(Name = "Join Trail")]
