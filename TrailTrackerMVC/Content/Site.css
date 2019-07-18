@@ -40,6 +40,7 @@ textarea {
     width: 90%;
     padding-left: 10%;
     text-align-last: left;
+    font-family: 'Hanalei', cursive;
 }
 .LogininInfomation {
     text-align: right;
@@ -60,8 +61,16 @@ textarea {
     padding-top: 3%;
     padding-bottom: 5%;
 }
-h2{
+.jumbotron {
+    font-family: 'Hanalei', cursive, bold;
+    /*font-family: 'Comfortaa', cursive, bold;*/
+}
+.TrailButtons {
+    font-family: 'Hanalei', cursive;
+}
+h2 {
     text-align: center;
+    font-family: 'Hanalei', cursive;
 }
 /*Homebackground items*/
 .Homebackground {
@@ -446,7 +455,7 @@ h2{
     border-style: solid;
     border-width: 2px;
     border-radius: 1%;
-    padding: 6% 5%;
+    padding: 5.5% 4%;
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
@@ -461,7 +470,7 @@ h2{
         border-style: solid;
         border-width: 2px;
         border-radius: 1%;
-        padding: 6% 5%;
+        padding: 5.5% 4%;
         text-transform: uppercase;
         transition: all 0.2s linear;
         text-decoration: none;
