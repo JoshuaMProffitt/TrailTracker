@@ -1,19 +1,19 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
-    {
+        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+        {
         @Html.AntiForgeryToken()
         <div class="LogininInfomation">
             @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "LogininButton" })
             <button class="LogininButton">Log off</button>
         </div>
-    }
-}
-else
-{
-    <div class="LogininInfomation">
-        @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "LogininButton" })
-        @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "LogininButton" })
-    </div>
+        }
+        }
+        else
+        {
+        <div class="LogininInfomation">
+            @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "LogininButton" })
+            @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "LogininButton" })
+        </div>
 }

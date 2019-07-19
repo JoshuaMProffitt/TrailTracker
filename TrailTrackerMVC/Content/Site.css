@@ -490,6 +490,7 @@ h2 {
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
+    font-family: 'Hanalei', cursive;
 }
     .LogininButton:hover {
         position: relative;
@@ -505,8 +506,13 @@ h2 {
         text-transform: uppercase;
         transition: all 0.2s linear;
         text-decoration: none;
+        font-family: 'Hanalei', cursive;
     }
 /*Tables*/
 #tableId {
     background-color: rgba(0, 255, 43, 0.10);
+}
+/*LoginInfoFont*/
+.LoginPageInfo {
+    font-family: 'Hanalei', cursive;
 }
