@@ -47,6 +47,11 @@ textarea {
     padding-top: .5%;
 }
 /*Affects most views*/
+th {
+    background-color: rgba(0, 255, 43, 0.20);
+    text-align: center;
+    vertical-align: central;
+}
 .view-background-1 {
     padding-top: 2%;
     padding-bottom: 2%;
@@ -162,18 +167,26 @@ h4 {
 }
 /*Contact Page*/
 .form-0 {
-    padding-top: 5%;
-    padding-left: 35.5%;
-    padding-right: 35.5%;
+    padding-top: 1%;
+    padding-bottom: 5%;
+    padding-left: 34%;
+    padding-right: 34%;
 }
 .form-1 {
     padding-top: 5.0%;
     padding-bottom: 15.0%;
-    padding-left: 3%;
-    padding-right: 5%;
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 100%;
     background-color: rgba(255, 255, 255, .5);
     text-align: center;
     border-radius: 5%
+}
+.feedback-input {
+    width: 100%;
+}
+textarea {
+    width: 100%;
 }
 /*About Page*/
 .TrailPhoto {
