@@ -71,6 +71,7 @@
                 </dl>
             </div>
             <p>
+                @Html.ActionLink("Home", "Index", "Home", null, new { @class = "buttonWhiteView" })
                 @Html.ActionLink("Back to List", "Index", null, new { @class = "buttonWhiteView" })
                 @Html.ActionLink("Edit", "Edit", new { id = Model.TrailInfoID }, new { @class = "buttonWhiteView" })
             </p>

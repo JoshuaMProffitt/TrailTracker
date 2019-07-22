@@ -99,10 +99,11 @@
                 {
                     @Html.AntiForgeryToken()
 
-                    <div class="form-actions no-color">
-                        @Html.ActionLink("Back to List", "Index", null, new { @class = "buttonWhiteView" })
-                        <input type="submit" value="Delete" class="buttonRed" />
-                    </div>
+            <div class="form-actions no-color">
+                @Html.ActionLink("Home", "Index", "Home", null, new { @class = "buttonWhiteView" })
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "buttonWhiteView" })
+                <input type="submit" value="Delete" class="buttonRed" />
+            </div>
                 }
             </div>
         </div>

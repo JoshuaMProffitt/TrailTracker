@@ -82,7 +82,7 @@ th {
     padding-top: 2%;
     padding-bottom: 2%;
     padding-left: 5%;
-    padding-right: 10%;
+    padding-right: 5%;
     background-color: rgba(4, 66, 15, 0.40);
     background-size: 100%;
     z-index: 0;
@@ -90,8 +90,8 @@ th {
     color: white;
 }
 .view-background-4 {
-    padding-left: 10%;
-    padding-right: 20%;
+    padding-left: 15%;
+    padding-right: 15%;
     padding-top: 3%;
     padding-bottom: 5%;
 }
@@ -305,7 +305,7 @@ textarea {
     border-color: white;
     border-style: solid;
     border-width: 1px;
-    padding: 3px 13px;
+    padding: 5px 13px;
     border-radius: 13px;
     text-transform: uppercase;
     transition: all 0.2s linear;
@@ -321,7 +321,7 @@ textarea {
         border-color: black;
         border-style: solid;
         border-width: 1px;
-        padding: 3px 13px;
+        padding: 5px 13px;
         border-radius: 13px;
         text-transform: uppercase;
         transition: all 0.2s linear;
