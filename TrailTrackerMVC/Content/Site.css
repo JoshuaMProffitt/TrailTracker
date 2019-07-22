@@ -61,16 +61,72 @@ textarea {
     padding-top: 3%;
     padding-bottom: 5%;
 }
-.jumbotron {
-    font-family: 'Hanalei', cursive, bold;
-    /*font-family: 'Comfortaa', cursive, bold;*/
+.view-background-3 {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 10%;
+    background-color: rgba(0, 255, 43, 0.10);
+    background-size: 100%;
+    z-index: 0;
+    border-radius: 5%;
+    color: white;
 }
-.TrailButtons {
-    font-family: 'Hanalei', cursive;
+.view-background-4 {
+    padding-left: 10%;
+    padding-right: 20%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+}
+.view-background-5 {
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 5%;
+    border-color: White;
+    border-style: solid;
+    border-width: 1.5px;
+}
+.view-background-6 {
+    border-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5%;
+}
+.view-background-7 {
+    border-color: White;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3.5%;
 }
 h2 {
     text-align: center;
     font-family: 'Hanalei', cursive;
+}
+h3 {
+    text-align: center;
+}
+h4 {
+    text-align: center;
+    font-family: 'Hanalei', cursive;
+    font-size: 28px;
+    text-decoration: underline;
+}
+.View-Buttons {
+    text-align: center;
+}
+.dl-horizontal {
+    padding-left: 33.4%;
+}
+.create-trail{
+    padding-left:32.4%;
+}
+.jumbotron {
+    font-family: 'Hanalei', cursive, bold;
+}
+.TrailButtons {
+    font-family: 'Hanalei', cursive;
+}
+.form-horizontal {
+    padding-left: 33.4%;
 }
 /*Homebackground items*/
 .Homebackground {
@@ -107,14 +163,14 @@ h2 {
 /*Contact Page*/
 .form-0 {
     padding-top: 5%;
-    padding-left: 41.5%;
-    padding-right: 41.5%;
+    padding-left: 35.5%;
+    padding-right: 35.5%;
 }
 .form-1 {
-    padding-top: 15.0%;
+    padding-top: 5.0%;
     padding-bottom: 15.0%;
     padding-left: 3%;
-    padding-right: 75%;
+    padding-right: 5%;
     background-color: rgba(255, 255, 255, .5);
     text-align: center;
     border-radius: 5%
@@ -170,13 +226,44 @@ h2 {
         transition: all 0.2s linear;
         text-decoration: none;
     }
+.buttonWhiteView {
+    position: relative;
+    z-index: 3;
+    background: transparent;
+    color: White;
+    font-size: 12px;
+    border-color: White;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px 13px;
+    border-radius: 13px;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+    text-decoration: none;
+}
+
+    .buttonWhiteView:hover {
+        position: relative;
+        z-index: 3;
+        background: White;
+        color: black;
+        font-size: 12px;
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        padding: 5px 13px;
+        border-radius: 13px;
+        text-transform: uppercase;
+        transition: all 0.2s linear;
+        text-decoration: none;
+    }
 .buttonRed {
     position: relative;
     z-index: 3;
     background: transparent;
-    color: black;
+    color: white;
     font-size: 12px;
-    border-color: black;
+    border-color: white;
     border-style: solid;
     border-width: 1px;
     padding: 3px 13px;
@@ -188,10 +275,10 @@ h2 {
     .buttonRed:hover {
         position: relative;
         z-index: 3;
-        background: black;
-        color: white;
+        background: white;
+        color: black;
         font-size: 12px;
-        border-color: white;
+        border-color: black;
         border-style: solid;
         border-width: 1px;
         padding: 3px 13px;

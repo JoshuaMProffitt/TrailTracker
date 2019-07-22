@@ -19,7 +19,7 @@ namespace TrailTracker.Models
         [Display(Name = "Trail Type")]
         public TrailType OfTrailType { get; set; }
         public string Picture { get; set; }
-        [Display(Name = "Meet Time XX/XX/XXXX XX:XX:XX")]
+        [Display(Name = "Meet Time XX/XX/XXXX_XX:XX:XX_AM")]
         public DateTime MeetTime { get; set; }
         [Display(Name = "Meet Comments")]
         public string MeetComments { get; set; }

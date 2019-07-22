@@ -2,20 +2,21 @@
     ViewBag.Title = "Contact";
 }
 <div class="view-background-2">
-    <div class="view-background-1">
-        @*<h3>@ViewBag.Message</h3>*@
+    <div class="view-background-7">
+        <div class="view-background-1">
+            @*<h3>@ViewBag.Message</h3>*@
 
-        @*<address>
-            One Microsoft Way<br />
-            Redmond, WA 98052-6399<br />
-            <abbr title="Phone">P:</abbr>
-            425.555.0100
-        </address>*@
-        <address>
-            <strong>Email:</strong>   <a href="mailto:Support@example.com">joshua.m.proffitt@gmail.com</a>
-        </address>
-        @Html.ActionLink("Home", "Index", "Home", null, new { @class = "buttonWhite" })
-    </div>
+            @*<address>
+                    One Microsoft Way<br />
+                    Redmond, WA 98052-6399<br />
+                    <abbr title="Phone">P:</abbr>
+                    425.555.0100
+                </address>*@
+            <address>
+                <strong>Email:</strong>   <a href="mailto:Support@example.com">joshua.m.proffitt@gmail.com</a>
+            </address>
+            @Html.ActionLink("Home", "Index", "Home", null, new { @class = "buttonWhite" })
+        </div>
         <div class="form-0">
             <div class="form-1">
                 <div class="form-2">
@@ -48,69 +49,61 @@
                 </div>
             </div>
         </div>
-</div>
-    <script> $(function()
-{
-    function after_form_submitted(data)
-    {
-        if(data.result == 'success')
-        {
-            $('form#reused_form').hide();
-            $('#success_message').show();
-            $('#error_message').hide();
-        }
-        else
-        {
-            $('#error_message').append('<ul></ul>');
-
-            jQuery.each(data.errors,function(key,val)
-            {
-                $('#error_message ul').append('<li>'+key+':'+val+'</li>');
-            });
-            $('#success_message').hide();
-            $('#error_message').show();
-
-            //reverse the response on the button
-            $('button[type="button"]', $form).each(function()
-            {
-                $btn = $(this);
-                label = $btn.prop('orig_label');
-                if(label)
-                {
-                    $btn.prop('type','submit' );
-                    $btn.text(label);
-                    $btn.prop('orig_label','');
+    </div>
+    <script>
+        $(function () {
+            function after_form_submitted(data) {
+                if (data.result == 'success') {
+                    $('form#reused_form').hide();
+                    $('#success_message').show();
+                    $('#error_message').hide();
                 }
+                else {
+                    $('#error_message').append('<ul></ul>');
+
+                    jQuery.each(data.errors, function (key, val) {
+                        $('#error_message ul').append('<li>' + key + ':' + val + '</li>');
+                    });
+                    $('#success_message').hide();
+                    $('#error_message').show();
+
+                    //reverse the response on the button
+                    $('button[type="button"]', $form).each(function () {
+                        $btn = $(this);
+                        label = $btn.prop('orig_label');
+                        if (label) {
+                            $btn.prop('type', 'submit');
+                            $btn.text(label);
+                            $btn.prop('orig_label', '');
+                        }
+                    });
+
+                }
+            }
+
+            $('#reused_form').submit(function (e) {
+                e.preventDefault();
+
+                $form = $(this);
+                //show some response on the button
+                $('button[type="submit"]', $form).each(function () {
+                    $btn = $(this);
+                    $btn.prop('type', 'button');
+                    $btn.prop('orig_label', $btn.text());
+                    $btn.text('Sending ...');
+                });
+
+
+                $.ajax({
+                    type: "POST",
+                    url: 'handler.php',
+                    data: $form.serialize(),
+                    success: after_form_submitted,
+                    dataType: 'json'
+                });
+
             });
-
-        }
-    }
-
-	$('#reused_form').submit(function(e)
-      {
-        e.preventDefault();
-
-        $form = $(this);
-        //show some response on the button
-        $('button[type="submit"]', $form).each(function()
-        {
-            $btn = $(this);
-            $btn.prop('type','button' );
-            $btn.prop('orig_label',$btn.text());
-            $btn.text('Sending ...');
         });
-
-
-                    $.ajax({
-                type: "POST",
-                url: 'handler.php',
-                data: $form.serialize(),
-                success: after_form_submitted,
-                dataType: 'json'
-            });
-
-      });
-});
     </script>
-}
-<div></div>
+    }
+</div>
