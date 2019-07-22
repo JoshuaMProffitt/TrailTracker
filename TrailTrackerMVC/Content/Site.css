@@ -62,6 +62,10 @@ textarea {
     padding-top: 3%;
     padding-bottom: 5%;
 }
+/*LoginInfoFont*/
+.LoginPageInfo {
+    font-family: 'Hanalei', cursive;
+}
 /*Tables*/
 .table-background {
     color: white;
@@ -110,6 +114,11 @@ th {
     border-width: 3px;
     border-radius: 5.5%;
 }
+.view-background-8 {
+    padding-top: 3%;
+    padding-bottom: 5%;
+
+}
 h2 {
     text-align: center;
     font-family: 'Hanalei', cursive;
@@ -122,6 +131,11 @@ h4 {
     font-family: 'Hanalei', cursive;
     font-size: 28px;
     text-decoration: underline;
+}
+h5 {
+    text-align: left;
+    font-family: 'Hanalei', cursive;
+    font-size: 28px;
 }
 .View-Buttons {
     text-align: center;
@@ -233,6 +247,7 @@ textarea {
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
+    font-family: 'Hanalei', cursive;
 }
     .buttonWhite:hover {
         position: relative;
@@ -263,6 +278,7 @@ textarea {
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
+    font-family: 'Hanalei', cursive;
 }
 
     .buttonWhiteView:hover {
@@ -294,6 +310,7 @@ textarea {
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
+    font-family: 'Hanalei', cursive;
 }
     .buttonRed:hover {
         position: relative;
@@ -618,8 +635,3 @@ textarea {
         text-decoration: none;
         font-family: 'Hanalei', cursive;
     }
-
-/*LoginInfoFont*/
-.LoginPageInfo {
-    font-family: 'Hanalei', cursive;
-}
