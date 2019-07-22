@@ -155,6 +155,16 @@ h5 {
 .form-horizontal {
     padding-left: 33.4%;
 }
+/*Views*/
+.Detail-View {
+    padding-right: 20%;
+}
+.Delete-View {
+    padding-right: 20%;
+}
+.Edit-View {
+
+}
 /*Homebackground items*/
 .Homebackground {
     padding-top: 0%;
