@@ -5,7 +5,7 @@
         {
         @Html.AntiForgeryToken()
         <div class="LogininInfomation">
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "LogininButton" })
+            @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "LogininButton" })
             <button class="LogininButton">Log off</button>
         </div>
         }

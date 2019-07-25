@@ -57,7 +57,6 @@ textarea {
     z-index: 0;
     border-radius: 5%;
 }
-
 .view-background-2 {
     padding-top: 3%;
     padding-bottom: 5%;
@@ -623,7 +622,7 @@ textarea {
     border-style: solid;
     border-width: 1px;
     padding: .3% 1%;
-    border-radius: 13px;
+    border-radius: 0px;
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
@@ -639,7 +638,7 @@ textarea {
         border-style: solid;
         border-width: 1px;
         padding: .3% 1%;
-        border-radius: 13px;
+        border-radius: 0px;
         text-transform: uppercase;
         transition: all 0.2s linear;
         text-decoration: none;
