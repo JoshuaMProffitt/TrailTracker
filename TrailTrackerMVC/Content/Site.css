@@ -256,7 +256,7 @@ textarea {
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
-    font-family: 'Hanalei', cursive;
+    font-family: 'Hanalei', 'Arial', cursive;
 }
     .buttonWhite:hover {
         position: relative;
@@ -287,7 +287,7 @@ textarea {
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
-    font-family: 'Hanalei', cursive;
+    font-family: 'Hanalei', 'Arial', cursive;
 }
 
     .buttonWhiteView:hover {
@@ -626,7 +626,7 @@ textarea {
     text-transform: uppercase;
     transition: all 0.2s linear;
     text-decoration: none;
-    font-family: 'Hanalei', cursive;
+    font-family: 'Hanalei', 'Arial', cursive;
 }
     .LogininButton:hover {
         position: relative;
@@ -642,5 +642,4 @@ textarea {
         text-transform: uppercase;
         transition: all 0.2s linear;
         text-decoration: none;
-        font-family: 'Hanalei', cursive;
     }
